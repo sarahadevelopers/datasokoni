@@ -1,0 +1,526 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
+
+    <title>All Products – Safaricom & Airtel Bundles, Data & Minutes | Bingwa Data</title>
+
+    <meta name="description" content="Browse all Safaricom and Airtel bundles – data, minutes, and SMS. Up to 60% off USSD prices. Okoa friendly, instant delivery via M-PESA Till 1621614. Cheap internet deals with Bingwa Data.">
+
+    <meta name="keywords" content="Safaricom bundles, Airtel bundles, cheap data Kenya, buy minutes, SMS bundles, Okoa friendly, Bingwa Data, internet deals">
+
+    <meta name="robots" content="index, follow">
+
+    <link rel="canonical" href="https://datasokoni.com/products.html">
+
+    <!-- Open Graph -->
+    <meta property="og:title" content="All Products – Safaricom & Airtel Bundles | Bingwa Data">
+    <meta property="og:description" content="Browse all Safaricom and Airtel bundles – data, minutes, and SMS. Up to 60% off USSD prices. Okoa friendly, instant delivery.">
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="https://datasokoni.com/products.html">
+    <meta property="og:image" content="https://datasokoni.com/assets/og-image.jpg">
+    <meta property="og:site_name" content="Bingwa Data">
+
+    <!-- Twitter Card -->
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:title" content="All Products – Safaricom & Airtel Bundles | Bingwa Data">
+    <meta name="twitter:description" content="Browse all Safaricom and Airtel bundles – data, minutes, and SMS. Up to 60% off USSD prices. Okoa friendly.">
+    <meta name="twitter:image" content="https://datasokoni.com/assets/og-image.jpg">
+
+    <!-- Favicons -->
+    <link rel="icon" type="image/webp" href="/bingwa-data-favicon.webp">
+    <link rel="alternate icon" href="/favicon.ico">
+    <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png">
+
+    <!-- Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Jost:wght@300;400;500;600;700;800;900&display=swap" rel="stylesheet">
+
+    <!-- Main CSS -->
+    <link rel="stylesheet" href="/style-full.css">
+
+    <style>
+        /* ===== Products Page Styles ===== */
+        .products-page {
+            max-width: 1200px;
+            margin: 2rem auto;
+            padding: 0 1.2rem;
+        }
+
+        .products-header {
+            text-align: center;
+            margin-bottom: 2.5rem;
+        }
+        .products-header h1 {
+            font-size: 2.5rem;
+            font-weight: 800;
+            line-height: 1.2;
+        }
+        .products-header p {
+            color: var(--text-light);
+            font-size: 1.1rem;
+            margin-top: 0.5rem;
+        }
+
+        .breadcrumbs {
+            font-size: 0.85rem;
+            color: #777;
+            margin-bottom: 1.5rem;
+        }
+        .breadcrumbs a {
+            color: var(--safaricom);
+            text-decoration: none;
+        }
+        .breadcrumbs span {
+            color: #999;
+        }
+
+        /* ===== Filter Bar ===== */
+        .filter-bar-products {
+            display: flex;
+            overflow-x: auto;
+            gap: 0.8rem;
+            padding: 1rem;
+            background: var(--bg-section);
+            margin-bottom: 1.5rem;
+            border-radius: 60px;
+            -webkit-overflow-scrolling: touch;
+            scrollbar-width: thin;
+        }
+        .filter-btn {
+            background: transparent;
+            border: none;
+            padding: 0.6rem 1.4rem;
+            border-radius: 40px;
+            font-family: var(--font);
+            font-weight: 600;
+            font-size: 0.9rem;
+            color: var(--text-primary);
+            cursor: pointer;
+            white-space: nowrap;
+            transition: var(--transition);
+        }
+        .filter-btn.active {
+            background: var(--safaricom);
+            color: #fff;
+        }
+        .filter-btn:hover:not(.active) {
+            background: rgba(0, 155, 77, 0.1);
+        }
+        .filter-btn.airtel-filter.active {
+            background: var(--airtel);
+            color: #fff;
+        }
+        .filter-btn.airtel-filter:hover:not(.active) {
+            background: rgba(225, 0, 0, 0.1);
+        }
+
+        /* ===== Product Grid ===== */
+        .product-grid-directory {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+            gap: 1.5rem;
+            margin-bottom: 2rem;
+        }
+
+        .product-card-directory {
+            background: var(--bg-main);
+            border: 1px solid var(--border);
+            border-radius: 24px;
+            padding: 1.2rem;
+            transition: var(--transition);
+            display: flex;
+            flex-direction: column;
+            text-decoration: none;
+            color: var(--text-primary);
+            position: relative;
+        }
+        .product-card-directory:hover {
+            transform: translateY(-4px);
+            box-shadow: var(--shadow-hover);
+        }
+        .product-card-directory .network-strip {
+            height: 4px;
+            width: 100%;
+            border-radius: 4px 4px 0 0;
+            margin-bottom: 1rem;
+        }
+        .product-card-directory.safaricom .network-strip {
+            background: var(--safaricom);
+        }
+        .product-card-directory.airtel .network-strip {
+            background: var(--airtel);
+        }
+
+        .product-card-directory .card-header {
+            display: flex;
+            justify-content: space-between;
+            align-items: baseline;
+            margin-bottom: 0.5rem;
+        }
+        .product-card-directory .product-title {
+            font-weight: 800;
+            font-size: 1.8rem;
+            line-height: 1.2;
+            letter-spacing: -0.02em;
+        }
+        .product-card-directory .validity-badge {
+            display: inline-block;
+            background: var(--bg-section);
+            font-weight: 600;
+            font-size: 0.75rem;
+            text-transform: uppercase;
+            letter-spacing: 0.5px;
+            padding: 0.25rem 0.8rem;
+            border-radius: 20px;
+        }
+        .product-card-directory .price-container {
+            font-size: 1.4rem;
+            font-weight: 500;
+            margin-bottom: 0.5rem;
+        }
+        .product-card-directory .currency {
+            font-weight: 400;
+            color: #666;
+        }
+        .product-card-directory .price-value {
+            color: var(--safaricom);
+        }
+        .product-card-directory.airtel .price-value {
+            color: #000;
+        }
+        .product-card-directory .okoa-badge {
+            background: #f0f9f0;
+            color: var(--safaricom);
+            font-size: 0.7rem;
+            padding: 0.2rem 0.6rem;
+            border-radius: 20px;
+            display: inline-block;
+            margin-bottom: 1rem;
+            align-self: flex-start;
+        }
+        .product-card-directory.airtel .okoa-badge {
+            background: #f0f0f0;
+            color: #000;
+        }
+
+        .product-card-directory .view-btn {
+            margin-top: auto;
+            background: var(--safaricom);
+            color: #fff;
+            border: none;
+            padding: 0.7rem;
+            border-radius: 40px;
+            font-family: var(--font);
+            font-weight: 700;
+            font-size: 0.9rem;
+            cursor: pointer;
+            transition: var(--transition);
+            width: 100%;
+        }
+        .product-card-directory.airtel .view-btn {
+            background: var(--airtel);
+        }
+        .product-card-directory .view-btn:hover {
+            opacity: 0.85;
+            transform: scale(1.02);
+        }
+
+        /* ===== Safaricom View Button ===== */
+        .product-card-directory.safaricom .view-btn {
+            background: var(--safaricom);
+            color: #fff;
+        }
+        .product-card-directory.safaricom .view-btn:hover {
+            background: #007a3b;
+            opacity: 0.9;
+        }
+
+        /* ===== Airtel Cards – Red Accent ===== */
+        .product-card-directory.airtel .product-title {
+            color: var(--airtel);
+        }
+        .product-card-directory.airtel .validity-badge {
+            background: #fdf2f2;
+            color: var(--airtel);
+        }
+
+        /* ===== No Results ===== */
+        .no-results {
+            text-align: center;
+            padding: 3rem;
+            color: var(--text-light);
+        }
+
+        /* ===== Responsive ===== */
+        @media (max-width: 768px) {
+            .products-header h1 { font-size: 1.9rem; }
+            .product-grid-directory {
+                grid-template-columns: repeat(2, 1fr);
+                gap: 1rem;
+            }
+            .product-card-directory .product-title { font-size: 1.3rem; }
+            .product-card-directory .price-container { font-size: 1.2rem; }
+            .filter-bar-products { padding: 0.8rem 1rem; }
+            .filter-btn { font-size: 0.8rem; padding: 0.4rem 1rem; }
+        }
+
+        @media (max-width: 480px) {
+            .product-grid-directory { 
+                grid-template-columns: repeat(2, 1fr);
+                gap: 0.5rem;
+            }
+            .product-card-directory { padding: 0.6rem; }
+            .product-card-directory .product-title { font-size: 0.85rem; }
+            .product-card-directory .price-container { font-size: 0.8rem; }
+            .product-card-directory .validity-badge { 
+                font-size: 0.5rem; 
+                padding: 0.1rem 0.4rem;
+            }
+            .product-card-directory .okoa-badge { 
+                font-size: 0.5rem; 
+                padding: 0.1rem 0.4rem;
+            }
+            .product-card-directory .view-btn { 
+                font-size: 0.65rem; 
+                padding: 0.4rem;
+            }
+            .product-card-directory .card-header {
+                flex-direction: column;
+                align-items: flex-start;
+                gap: 0.2rem;
+            }
+        }
+    </style>
+
+    <!-- JSON-LD Schema: Product Collection -->
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "CollectionPage",
+      "name": "All Safaricom & Airtel Bundles",
+      "description": "Browse all Safaricom and Airtel bundles – data, minutes, and SMS. Up to 60% off USSD prices. Okoa friendly, instant delivery via M-PESA Till 1621614.",
+      "url": "https://datasokoni.com/products.html",
+      "about": {
+        "@type": "Thing",
+        "name": "Mobile bundles, data, minutes, SMS"
+      }
+    }
+    </script>
+<script src="https://www.google.com/recaptcha/api.js?render=6LcKDGEtAAAAAJKAWjXB7j5bSIPvzz94wBWapTD5"></script>
+</head>
+
+<body>
+
+    <!-- ===== HEADER ===== -->
+    <header class="header">
+        <div class="logo">
+            <span class="bingwa">Bingwa</span><span class="soko">Data</span>
+        </div>
+        <div class="tagline">Your data marketplace – cheap internet bundles in Kenya.</div>
+        <div class="system-status">
+            <span class="pulse-dot"></span>
+            <span class="status-text">System Online • Instant Delivery • Okoa Friendly</span>
+        </div>
+        <a href="https://wa.me/254743731749" class="whatsapp-icon" target="_blank" aria-label="WhatsApp Support" style="line-height:0">
+            <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                <path d="M12 2C6.48 2 2 6.48 2 12c0 1.89.52 3.64 1.43 5.15L2 22l4.85-1.43A9.97 9.97 0 0 0 12 22c5.52 0 10-4.48 10-10S17.52 2 12 2z" fill="#25D366"/>
+                <path d="M12 6.5c-3.04 0-5.5 2.46-5.5 5.5 0 1.04.29 2.01.79 2.85L6.5 17.5l2.65-.79c.84.5 1.81.79 2.85.79 3.04 0 5.5-2.46 5.5-5.5S15.04 6.5 12 6.5z" fill="white"/>
+            </svg>
+        </a>
+    </header>
+
+    <!-- ===== PRODUCTS PAGE ===== -->
+    <div class="products-page">
+
+        <!-- Breadcrumbs -->
+        <div class="breadcrumbs">
+            <a href="/">Home</a> › <span>Products</span>
+        </div>
+
+        <!-- Header -->
+        <div class="products-header">
+            <h1>All Bundles</h1>
+            <p>Browse all Safaricom &amp; Airtel bundles – data, minutes, and SMS</p>
+        </div>
+
+        <!-- Filters -->
+        <div class="filter-bar-products" id="filterBarProducts">
+            <button class="filter-btn active" data-filter="all">All</button>
+            <button class="filter-btn" data-filter="Safaricom">Safaricom</button>
+            <button class="filter-btn airtel-filter" data-filter="Airtel">Airtel</button>
+            <button class="filter-btn" data-filter="data">📶 Data</button>
+            <button class="filter-btn" data-filter="minutes">📞 Minutes</button>
+            <button class="filter-btn" data-filter="sms">💬 SMS</button>
+        </div>
+
+        <!-- Product Grid -->
+        <div class="product-grid-directory" id="productGridDirectory">
+            <!-- Products will be loaded here by JavaScript -->
+            <div class="no-results">Loading products...</div>
+        </div>
+
+    </div>
+
+    <!-- ===== FOOTER ===== -->
+    <footer class="footer">
+        <div class="footer-grid">
+            <div class="footer-about">
+                <h3 class="footer-logo">Bingwa<span>Data</span></h3>
+                <p>Your number one stop for affordable internet bundles. Secure payments via M-PESA Till 1621614.</p>
+            </div>
+            <div class="footer-support">
+                <h4>Support</h4>
+                <ul>
+                    <li><a href="https://wa.me/254743731749">WhatsApp Help</a></li>
+                    <li><a href="mailto:support@datasokoni.com">Email Us</a></li>
+                </ul>
+            </div>
+            <div class="footer-links">
+                <h4>Quick Links</h4>
+                <ul>
+                    <li><a href="/blog.html">Blogs</a></li>
+                    <li><a href="/faq.html">FAQs</a></li>
+                    <li><a href="/about.html">About Us</a></li>
+                    <li><a href="/terms.html">Terms of Service</a></li>
+                </ul>
+            </div>
+        </div>
+        <div class="footer-bottom">
+            <p>&copy; 2026 Bingwa Data | Built for Speed.</p>
+            <p class="disclaimer">Payments secured via M-PESA STK Push (Till 1621614). Independent reseller platform – not affiliated with Safaricom or Airtel.</p>
+        </div>
+    </footer>
+
+    <!-- Scripts -->
+    <script>
+        // ===== PRODUCT DATA (Updated Prices + Unique Descriptions) =====
+        const products = [
+    // ===== SAFARICOM DATA =====
+    { id: 1, network: "Safaricom", type: "data", title: "1.25 GB", validity: "Midnight", price: 50 },
+    { id: 2, network: "Safaricom", type: "data", title: "2.5 GB", validity: "24 Hours", price: 95 },
+    { id: 3, network: "Safaricom", type: "data", title: "7 GB", validity: "7 Days", price: 195 },
+    { id: 4, network: "Safaricom", type: "data", title: "1.5 GB", validity: "3 Hours", price: 22 },
+    { id: 5, network: "Safaricom", type: "data", title: "1 GB", validity: "1 Hour", price: 13 },
+    { id: 6, network: "Safaricom", type: "data", title: "600 MB", validity: "7 Days", price: 40 },
+    { id: 7, network: "Safaricom", type: "data", title: "500 MB", validity: "24 Hours", price: 20 },
+    { id: 8, network: "Safaricom", type: "data", title: "14 GB", validity: "7 Days", price: 350 },
+    { id: 9, network: "Safaricom", type: "data", title: "1.5 GB", validity: "6 Hours", price: 30 },
+    { id: 10, network: "Safaricom", type: "data", title: "300 MB", validity: "24 Hours", price: 15 },
+    { id: 11, network: "Safaricom", type: "data", title: "1 GB", validity: "24 Hours", price: 45 },
+
+    // ===== SAFARICOM MINUTES =====
+    { id: 12, network: "Safaricom", type: "minutes", title: "250 Mins", validity: "7 Days", price: 150 },
+    { id: 13, network: "Safaricom", type: "minutes", title: "800 Mins", validity: "30 Days", price: 451 },
+    { id: 14, network: "Safaricom", type: "minutes", title: "300 Mins", validity: "30 Days", price: 200 },
+    { id: 15, network: "Safaricom", type: "minutes", title: "100 Mins", validity: "2 Days", price: 50 },
+    { id: 16, network: "Safaricom", type: "minutes", title: "50 Mins", validity: "Midnight", price: 25 },
+    { id: 17, network: "Safaricom", type: "minutes", title: "45 Mins", validity: "3 Hours", price: 19 },
+    { id: 18, network: "Safaricom", type: "minutes", title: "150 Calls/SMS", validity: "No Expiry", price: 71 },
+    { id: 19, network: "Safaricom", type: "minutes", title: "60 Calls/SMS", validity: "No Expiry", price: 18 },
+    { id: 20, network: "Safaricom", type: "minutes", title: "1700 Mins", validity: "30 Days", price: 950 },
+    { id: 21, network: "Safaricom", type: "minutes", title: "500 Mins", validity: "7 Days", price: 249 },
+    { id: 22, network: "Safaricom", type: "minutes", title: "1250 Mins", validity: "30 Days", price: 800 },
+    { id: 23, network: "Safaricom", type: "minutes", title: "150 Mins/2GB", validity: "7 Days", price: 145 },
+    { id: 24, network: "Safaricom", type: "minutes", title: "550 Mins/6GB", validity: "30 Days", price: 499 },
+    { id: 25, network: "Safaricom", type: "sms", title: "20 SMS", validity: "24 Hours", price: 4 },
+
+    // ===== AIRTEL DATA =====
+    { id: 26, network: "Airtel", type: "data", title: "2 GB", validity: "3 Days", price: 60 },
+    { id: 27, network: "Airtel", type: "data", title: "14 GB", validity: "30 Days", price: 149 },
+    { id: 28, network: "Airtel", type: "data", title: "30 GB", validity: "30 Days", price: 890 },
+    { id: 29, network: "Airtel", type: "data", title: "45 GB/400 Mins", validity: "30 Days", price: 990 },
+    { id: 30, network: "Airtel", type: "data", title: "2 GB", validity: "Midnight", price: 42 },
+    { id: 31, network: "Airtel", type: "data", title: "7.5 GB", validity: "30 Days", price: 399 },
+    { id: 32, network: "Airtel", type: "data", title: "90 GB/900Mins", validity: "30 Days", price: 1290 },
+    { id: 33, network: "Airtel", type: "data", title: "200 MB/25Mins", validity: "24 Hours", price: 22 },
+    { id: 34, network: "Airtel", type: "data", title: "1.5 GB", validity: "3 Hours", price: 20 },
+    { id: 35, network: "Airtel", type: "data", title: "1 GB", validity: "24 Hours", price: 39 },
+    { id: 36, network: "Airtel", type: "data", title: "1.2 GB", validity: "7 Days", price: 88 },
+    { id: 37, network: "Airtel", type: "data", title: "7 GB", validity: "7 Days", price: 150 },
+    { id: 38, network: "Airtel", type: "data", title: "14 GB", validity: "7 Days", price: 199 },
+    { id: 39, network: "Airtel", type: "data", title: "1,000 SMS", validity: "7 Days", price: 31 },
+    { id: 40, network: "Airtel", type: "data", title: "1.2 GB", validity: "1 Hour", price: 10 },
+    { id: 41, network: "Airtel", type: "data", title: "300 MB", validity: "24 Hours", price: 15 },
+    { id: 42, network: "Airtel", type: "data", title: "100 Mins", validity: "7 Days", price: 80 }
+];
+
+        // ===== HELPER: Generate slug (UPDATED – matches generator) =====
+       // ===== HELPER: Generate slug (FIXED – includes validity) =====
+function getSlug(product) {
+    const networkPrefix = product.network.toLowerCase();
+    const titleSlug = product.title
+        .toLowerCase()
+        .replace(/\s+/g, '-')
+        .replace(/\//g, '-')
+        .replace(/[^a-z0-9-]/g, '');
+    const validitySlug = product.validity
+        .toLowerCase()
+        .replace(/\s+/g, '-')
+        .replace(/\//g, '-')
+        .replace(/[^a-z0-9-]/g, '');
+    return `${networkPrefix}-${titleSlug}-${validitySlug}-${product.id}`;
+}
+     // ===== RENDER PRODUCTS =====
+        function renderProducts(filter = 'all') {
+            const grid = document.getElementById('productGridDirectory');
+
+            let filtered = products;
+
+            // Apply network filter
+            if (filter === 'Safaricom' || filter === 'Airtel') {
+                filtered = filtered.filter(p => p.network === filter);
+            }
+
+            // Apply type filter
+            if (filter === 'data' || filter === 'minutes' || filter === 'sms') {
+                filtered = filtered.filter(p => p.type === filter);
+            }
+
+            if (filtered.length === 0) {
+                grid.innerHTML = `<div class="no-results">No products found. Try another filter.</div>`;
+                return;
+            }
+
+            grid.innerHTML = filtered.map(product => {
+                const slug = getSlug(product);
+                const networkClass = product.network === 'Airtel' ? 'airtel' : 'safaricom';
+
+                return `
+                <a href="/product/${slug}.html" class="product-card-directory ${networkClass}">
+                    <div class="network-strip"></div>
+                    <div class="card-header">
+                        <span class="product-title">${product.title}</span>
+                        <span class="validity-badge">${product.validity}</span>
+                    </div>
+                    <div class="price-container">
+                        <span class="currency">Ksh</span>
+                        <span class="price-value">${product.price}</span>
+                    </div>
+                    <div class="okoa-badge">✅ Okoa Friendly</div>
+                    <button class="view-btn">View Bundle →</button>
+                </a>
+                `;
+            }).join('');
+        }
+
+        // ===== FILTER LOGIC =====
+        document.querySelectorAll('.filter-btn').forEach(btn => {
+            btn.addEventListener('click', function() {
+                // Remove active from all
+                document.querySelectorAll('.filter-btn').forEach(b => b.classList.remove('active'));
+                this.classList.add('active');
+
+                const filter = this.dataset.filter;
+                renderProducts(filter);
+            });
+        });
+
+        // ===== INITIAL RENDER =====
+        renderProducts('all');
+    </script>
+
+</body>
+</html>

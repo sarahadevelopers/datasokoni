@@ -1,0 +1,910 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
+
+    <title>Bingwa Data Portal Login – Access Your Account (2026) | Bingwa Data Blog</title>
+
+    <meta name="description" content="Learn how to log in to your Bingwa Data portal. Access your account, check balance, view purchase history, gift bundles, and manage subscriptions.">
+
+    <meta name="keywords" content="Bingwa Data portal login, account access, login guide, customer portal, manage account, check balance, view orders">
+
+    <meta name="robots" content="index, follow">
+
+    <link rel="canonical" href="https://datasokoni.com/blog/bingwa-data-portal-login-access-your-account.html">
+
+    <!-- Open Graph -->
+    <meta property="og:title" content="Bingwa Data Portal Login – Access Your Account (2026)">
+    <meta property="og:description" content="Learn how to log in to your Bingwa Data portal. Access your account, check balance, view purchase history, gift bundles, and manage subscriptions.">
+    <meta property="og:type" content="article">
+    <meta property="og:url" content="https://datasokoni.com/blog/bingwa-data-portal-login-access-your-account.html">
+    <meta property="og:image" content="https://datasokoni.com/assets/blog-portal-login.jpg">
+    <meta property="og:site_name" content="Bingwa Data">
+
+    <!-- Twitter Card -->
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:title" content="Bingwa Data Portal Login – Access Your Account (2026)">
+    <meta name="twitter:description" content="Learn how to log in to your Bingwa Data portal. Access your account, check balance, view purchase history, gift bundles, and manage subscriptions.">
+    <meta name="twitter:image" content="https://datasokoni.com/assets/blog-portal-login.jpg">
+
+    <!-- Favicons -->
+    <link rel="icon" type="image/webp" href="/bingwa-data-favicon.webp">
+    <link rel="alternate icon" href="/favicon.ico">
+    <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png">
+
+    <!-- Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Jost:wght@300;400;500;600;700;800;900&display=swap" rel="stylesheet">
+
+    <!-- Main CSS -->
+    <link rel="stylesheet" href="../style-full.css">
+
+    <style>
+        /* ===== Blog Post Styles ===== */
+        .post-container {
+            max-width: 850px;
+            margin: 2rem auto;
+            padding: 0 1.2rem;
+        }
+
+        .breadcrumbs {
+            font-size: 0.85rem;
+            color: #777;
+            margin-bottom: 1rem;
+        }
+        .breadcrumbs a {
+            color: var(--safaricom);
+            text-decoration: none;
+        }
+        .breadcrumbs ol {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 0.5rem;
+            list-style: none;
+        }
+        .breadcrumbs li:not(:last-child)::after {
+            content: "›";
+            margin-left: 0.5rem;
+        }
+
+        .post-header {
+            text-align: center;
+            margin-bottom: 2rem;
+        }
+        .post-header h1 {
+            font-size: 2.5rem;
+            font-weight: 800;
+            line-height: 1.2;
+        }
+        .post-meta {
+            color: #777;
+            margin-top: 0.8rem;
+            font-size: 0.9rem;
+        }
+
+        .featured-image {
+            width: 100%;
+            border-radius: 24px;
+            margin: 1.5rem 0;
+        }
+
+        .post-content {
+            font-size: 1rem;
+            line-height: 1.8;
+        }
+        .post-content h2 {
+            margin-top: 2rem;
+            margin-bottom: 1rem;
+            font-size: 1.5rem;
+        }
+        .post-content h3 {
+            margin-top: 1.5rem;
+            margin-bottom: 0.8rem;
+            font-size: 1.2rem;
+        }
+        .post-content p {
+            margin-bottom: 1.2rem;
+        }
+        .post-content ul,
+        .post-content ol {
+            margin-left: 1.5rem;
+            margin-bottom: 1.5rem;
+        }
+        .post-content li {
+            margin-bottom: 0.7rem;
+        }
+
+        .info-box {
+            background: #eef8ff;
+            border-left: 5px solid var(--safaricom);
+            padding: 1rem 1.2rem;
+            border-radius: 16px;
+            margin: 1.5rem 0;
+        }
+
+        .warning-box {
+            background: #FFF7E5;
+            border-left: 6px solid #ff9800;
+            padding: 1rem 1.2rem;
+            border-radius: 16px;
+            margin: 1.5rem 0;
+        }
+
+        .success-box {
+            background: #dcfce7;
+            border-left: 6px solid #16a34a;
+            padding: 1rem 1.2rem;
+            border-radius: 16px;
+            margin: 1.5rem 0;
+        }
+
+        .cta-button {
+            display: block;
+            text-align: center;
+            background: var(--safaricom);
+            color: #fff;
+            text-decoration: none;
+            padding: 1rem;
+            border-radius: 50px;
+            font-weight: 700;
+            margin: 2rem 0;
+            transition: 0.2s ease;
+        }
+        .cta-button:hover {
+            background: #007a3b;
+        }
+
+        .till-box {
+            background: #f8f8f8;
+            border-radius: 60px;
+            display: inline-flex;
+            align-items: center;
+            gap: 1rem;
+            padding: 0.8rem 1.5rem;
+            margin: 1.5rem 0;
+            border: 1px solid var(--border);
+        }
+        .till-box strong {
+            font-size: 1.6rem;
+            color: var(--safaricom);
+        }
+        .till-box button {
+            background: #111;
+            color: #fff;
+            border: none;
+            padding: 6px 20px;
+            border-radius: 40px;
+            cursor: pointer;
+            font-weight: 600;
+        }
+        .till-box button:hover {
+            background: #333;
+        }
+
+        .trust-badge {
+            display: flex;
+            gap: 1rem;
+            align-items: center;
+            background: #F4F7F6;
+            border-radius: 24px;
+            padding: 1rem 1.5rem;
+            margin: 1.8rem 0;
+        }
+        .badge-icon {
+            font-size: 2rem;
+        }
+
+        .author-box {
+            display: flex;
+            gap: 1rem;
+            align-items: center;
+            background: #F4F7F6;
+            padding: 1.2rem;
+            border-radius: 28px;
+            margin: 2rem 0;
+        }
+        .author-box img {
+            border-radius: 50%;
+            object-fit: cover;
+        }
+
+        .faq-item {
+            margin-bottom: 1.5rem;
+            border-bottom: 1px solid var(--border);
+            padding-bottom: 1rem;
+        }
+        .faq-item:last-child {
+            border-bottom: none;
+        }
+        .faq-item strong {
+            font-weight: 700;
+            display: block;
+            margin-bottom: 0.4rem;
+        }
+
+        .table-of-contents {
+            background: var(--bg-section, #F4F7F6);
+            border-radius: 20px;
+            padding: 1.2rem 1.8rem;
+            margin: 1.8rem 0;
+            border-left: 5px solid var(--safaricom, #009B4D);
+        }
+        .table-of-contents h3 {
+            margin-bottom: 0.8rem;
+            font-weight: 700;
+        }
+        .table-of-contents ul {
+            list-style: none;
+            display: flex;
+            flex-wrap: wrap;
+            gap: 0.6rem 1.2rem;
+        }
+        .table-of-contents li a {
+            text-decoration: none;
+            color: var(--safaricom, #009B4D);
+            font-weight: 500;
+        }
+
+        .soft-cta {
+            background: #E8F5E9;
+            border-radius: 16px;
+            padding: 1rem 1.5rem;
+            margin: 1.5rem 0;
+            text-align: center;
+        }
+
+        .contact-card {
+            background: #fff;
+            border: 1px solid var(--border);
+            border-radius: 20px;
+            padding: 1.2rem 1.5rem;
+            margin: 1rem 0;
+            display: flex;
+            align-items: center;
+            gap: 1rem;
+            transition: var(--transition);
+        }
+        .contact-card:hover {
+            border-color: var(--safaricom);
+            box-shadow: var(--shadow-hover);
+        }
+        .contact-card .contact-icon {
+            font-size: 2rem;
+            width: 50px;
+            text-align: center;
+            flex-shrink: 0;
+        }
+        .contact-card .contact-info h3 {
+            font-weight: 700;
+            font-size: 1rem;
+            margin-bottom: 0.2rem;
+        }
+        .contact-card .contact-info p {
+            color: var(--text-light);
+            font-size: 0.95rem;
+            margin-bottom: 0;
+        }
+        .contact-card .contact-info a {
+            color: var(--safaricom);
+            text-decoration: none;
+            font-weight: 600;
+        }
+        .contact-card .contact-info a:hover {
+            text-decoration: underline;
+        }
+
+        .portal-features {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 1rem;
+            margin: 1.5rem 0;
+        }
+        .portal-feature {
+            background: #ffffff;
+            border: 1px solid #eef2f6;
+            border-radius: 16px;
+            padding: 1.2rem 1rem;
+            text-align: center;
+            transition: all 0.2s ease;
+        }
+        .portal-feature:hover {
+            border-color: var(--safaricom, #009B4D);
+            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.06);
+        }
+        .portal-feature .icon {
+            font-size: 2rem;
+            display: block;
+            margin-bottom: 0.5rem;
+        }
+        .portal-feature h4 {
+            font-weight: 700;
+            font-size: 1rem;
+            margin-bottom: 0.2rem;
+            color: #111827;
+        }
+        .portal-feature p {
+            font-size: 0.85rem;
+            color: #64748b;
+            margin-bottom: 0;
+        }
+
+        .popular-packages {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
+            gap: 1rem;
+            margin: 1.5rem 0;
+        }
+        .popular-package {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            background: #ffffff;
+            border-radius: 20px;
+            padding: 1.4rem 0.8rem;
+            border: 1px solid #eef2f6;
+            transition: transform 0.25s ease, box-shadow 0.25s ease, border-color 0.25s ease;
+            text-decoration: none;
+            color: #1a1a1a;
+            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.03);
+            height: 100%;
+            min-height: 200px;
+            position: relative;
+            overflow: hidden;
+        }
+        .popular-package:hover {
+            transform: translateY(-6px);
+            box-shadow: 0 16px 40px rgba(0, 0, 0, 0.08);
+            border-color: #d0d9e6;
+        }
+        .popular-package .p-name {
+            font-weight: 700;
+            font-size: 1.15rem;
+            margin-bottom: 2px;
+            color: #111827;
+        }
+        .popular-package .p-price {
+            font-weight: 800;
+            font-size: 1.3rem;
+            color: var(--safaricom, #009B4D);
+            margin-bottom: 2px;
+        }
+        .popular-package .p-validity {
+            font-size: 0.75rem;
+            color: #64748b;
+            margin-bottom: 6px;
+        }
+        .popular-package .p-badge {
+            font-size: 0.6rem;
+            font-weight: 700;
+            padding: 0.2rem 0.8rem;
+            border-radius: 30px;
+            background: #dcfce7;
+            color: #166534;
+            margin-bottom: 12px;
+            display: inline-block;
+            letter-spacing: 0.3px;
+        }
+        .popular-package.airtel .p-price {
+            color: var(--airtel, #E10000);
+        }
+        .popular-package.airtel .p-badge {
+            background: #fef2f2;
+            color: #991b1b;
+        }
+        .popular-package .p-cta {
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            gap: 4px;
+            background: var(--safaricom, #009B4D);
+            color: #ffffff;
+            font-weight: 700;
+            font-size: 0.8rem;
+            padding: 8px 24px;
+            border-radius: 50px;
+            letter-spacing: 0.4px;
+            transition: all 0.2s ease;
+            width: auto;
+            min-width: 120px;
+            border: none;
+            cursor: pointer;
+            text-transform: uppercase;
+            box-shadow: 0 4px 10px rgba(0, 155, 77, 0.25);
+            margin-top: 4px;
+            background: #0f7b3a;
+        }
+        .popular-package:hover .p-cta {
+            transform: scale(1.05);
+            box-shadow: 0 8px 20px rgba(0, 155, 77, 0.35);
+            background: #00632e;
+        }
+        .popular-package.airtel .p-cta {
+            background: #cc0000;
+            box-shadow: 0 4px 10px rgba(225, 0, 0, 0.25);
+        }
+        .popular-package.airtel:hover .p-cta {
+            background: #a30000;
+            box-shadow: 0 8px 20px rgba(225, 0, 0, 0.35);
+        }
+        .popular-package::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            height: 4px;
+            background: var(--safaricom, #009B4D);
+            border-radius: 20px 20px 0 0;
+            opacity: 0.6;
+            transition: opacity 0.2s;
+        }
+        .popular-package.airtel::before {
+            background: var(--airtel, #E10000);
+        }
+        .popular-package:hover::before {
+            opacity: 1;
+        }
+
+        .related-posts {
+            margin-top: 3rem;
+            border-top: 1px solid var(--border);
+            padding-top: 2rem;
+        }
+        .related-posts ul {
+            list-style: none;
+        }
+        .related-posts li {
+            display: flex;
+            gap: 12px;
+            margin-bottom: 1rem;
+            align-items: center;
+        }
+        .related-posts img {
+            width: 65px;
+            height: 65px;
+            border-radius: 12px;
+            object-fit: cover;
+        }
+        .related-posts a {
+            color: var(--safaricom);
+            font-weight: 600;
+            text-decoration: none;
+        }
+
+        @media (max-width: 480px) {
+            .popular-packages {
+                grid-template-columns: 1fr 1fr;
+                gap: 0.5rem;
+            }
+            .popular-package {
+                padding: 0.7rem;
+                min-height: 150px;
+            }
+            .popular-package .p-cta {
+                font-size: 0.7rem;
+                padding: 6px 16px;
+                min-width: 90px;
+            }
+            .popular-package .p-price {
+                font-size: 1.1rem;
+            }
+            .popular-package .p-name {
+                font-size: 0.85rem;
+            }
+            .portal-features {
+                grid-template-columns: 1fr 1fr;
+                gap: 0.5rem;
+            }
+            .portal-feature {
+                padding: 0.8rem 0.5rem;
+            }
+        }
+
+        @media (max-width: 768px) {
+            .post-header h1 {
+                font-size: 1.9rem;
+            }
+            .post-container {
+                padding: 0 1rem;
+            }
+            .popular-packages {
+                grid-template-columns: repeat(2, 1fr);
+                gap: 0.6rem;
+            }
+            .portal-features {
+                grid-template-columns: 1fr 1fr;
+            }
+        }
+    </style>
+
+    <!-- JSON‑LD Schema -->
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@graph": [
+        {
+          "@type": "TechArticle",
+          "headline": "Bingwa Data Portal Login – Access Your Account (2026)",
+          "description": "Learn how to log in to your Bingwa Data portal. Access your account, check balance, view purchase history, gift bundles, and manage subscriptions.",
+          "image": "https://datasokoni.com/assets/blog-portal-login.jpg",
+          "author": {
+            "@type": "Organization",
+            "name": "Bingwa Data Telecom Team"
+          },
+          "publisher": {
+            "@type": "Organization",
+            "name": "Bingwa Data",
+            "logo": {
+              "@type": "ImageObject",
+              "url": "https://datasokoni.com/assets/logo.png"
+            }
+          },
+          "datePublished": "2026-07-26",
+          "dateModified": "2026-07-26",
+          "mainEntityOfPage": {
+            "@type": "WebPage",
+            "@id": "https://datasokoni.com/blog/bingwa-data-portal-login-access-your-account.html"
+          },
+          "articleSection": "Account Guide",
+          "wordCount": "1200"
+        },
+        {
+          "@type": "BreadcrumbList",
+          "itemListElement": [
+            { "@type": "ListItem", "position": 1, "name": "Home", "item": "https://datasokoni.com/" },
+            { "@type": "ListItem", "position": 2, "name": "Blog", "item": "https://datasokoni.com/blog.html" },
+            { "@type": "ListItem", "position": 3, "name": "Bingwa Data Portal Login", "item": "https://datasokoni.com/blog/bingwa-data-portal-login-access-your-account.html" }
+          ]
+        },
+        {
+          "@type": "FAQPage",
+          "mainEntity": [
+            {
+              "@type": "Question",
+              "name": "How do I log in to my Bingwa Data portal?",
+              "acceptedAnswer": {
+                "@type": "Answer",
+                "text": "Visit datasokoni.com, click 'Login' at the top right, enter your phone number or email and password, then click 'Login' to access your dashboard."
+              }
+            },
+            {
+              "@type": "Question",
+              "name": "What if I forgot my password?",
+              "acceptedAnswer": {
+                "@type": "Answer",
+                "text": "Click the 'Forgot Password' link on the login page. Enter your phone number or email and we'll send you a reset link."
+              }
+            },
+            {
+              "@type": "Question",
+              "name": "What can I do in the portal?",
+              "acceptedAnswer": {
+                "@type": "Answer",
+                "text": "You can check your bundle balance, view purchase history, gift bundles to others, manage your profile, and track active subscriptions."
+              }
+            },
+            {
+              "@type": "Question",
+              "name": "Is the portal available on mobile?",
+              "acceptedAnswer": {
+                "@type": "Answer",
+                "text": "Yes, the portal is fully responsive and works on all smartphones, tablets, and desktop computers."
+              }
+            }
+          ]
+        }
+      ]
+    }
+    </script>
+<script src="https://www.google.com/recaptcha/api.js?render=6LcKDGEtAAAAAJKAWjXB7j5bSIPvzz94wBWapTD5"></script>
+</head>
+<body>
+
+    <!-- ===== HEADER ===== -->
+    <header class="header">
+        <div class="logo">
+            <span class="bingwa">Bingwa</span><span class="soko">Data</span>
+        </div>
+        <div class="tagline">Your data marketplace – cheap internet bundles in Kenya.</div>
+        <div class="system-status">
+            <span class="pulse-dot"></span>
+            <span class="status-text">System Online • Instant Delivery • Okoa Friendly</span>
+        </div>
+        <a href="https://wa.me/254743731749" class="whatsapp-icon" target="_blank" aria-label="WhatsApp Support" style="line-height:0">
+            <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                <path d="M12 2C6.48 2 2 6.48 2 12c0 1.89.52 3.64 1.43 5.15L2 22l4.85-1.43A9.97 9.97 0 0 0 12 22c5.52 0 10-4.48 10-10S17.52 2 12 2z" fill="#25D366"/>
+                <path d="M12 6.5c-3.04 0-5.5 2.46-5.5 5.5 0 1.04.29 2.01.79 2.85L6.5 17.5l2.65-.79c.84.5 1.81.79 2.85.79 3.04 0 5.5-2.46 5.5-5.5S15.04 6.5 12 6.5z" fill="white"/>
+            </svg>
+        </a>
+    </header>
+
+    <!-- ===== BLOG POST ===== -->
+    <div class="post-container">
+
+        <!-- Breadcrumbs -->
+        <div class="breadcrumbs">
+            <ol>
+                <li><a href="../index.html">Home</a></li>
+                <li><a href="../blog.html">Blog</a></li>
+                <li>Bingwa Data Portal Login</li>
+            </ol>
+        </div>
+
+        <!-- Post Header -->
+        <div class="post-header">
+            <h1>Bingwa Data Portal Login – Access Your Account (2026)</h1>
+            <div class="post-meta">📅 July 26, 2026 · ⏱️ 6 min read · 📝 Last updated: July 2026</div>
+        </div>
+
+        <!-- ===== CTA #1 ===== -->
+        <a href="../index.html" class="cta-button">🔐 Login to Your Portal – Manage Your Account</a>
+
+        <!-- Featured Image -->
+        <img src="https://datasokoni.com/assets/blog-portal-login.jpg" alt="Bingwa Data Portal Login – Access Your Account" class="featured-image" loading="lazy" onerror="this.src='https://datasokoni.com/assets/bingwa-data-fallback.webp'">
+
+        <!-- ===== POST CONTENT ===== -->
+        <div class="post-content">
+
+            <!-- ===== TABLE OF CONTENTS ===== -->
+            <div class="table-of-contents">
+                <h3>In this guide</h3>
+                <ul>
+                    <li><a href="#why-login">Why Log In?</a></li>
+                    <li><a href="#login-steps">How to Log In</a></li>
+                    <li><a href="#portal-features">Portal Features</a></li>
+                    <li><a href="#troubleshooting">Troubleshooting Login Issues</a></li>
+                    <li><a href="#faq">Frequently Asked Questions</a></li>
+                </ul>
+            </div>
+
+    <!-- ===== POPULAR PACKAGES ===== -->
+    <div class="popular-packages">
+        
+        <a href="/product/airtel-2-gb-midnight-30.html" class="popular-package airtel">
+            <div class="p-name">2 GB Data</div>
+            <div class="p-price">Ksh 42</div>
+            <div class="p-validity">Midnight</div>
+            <div class="p-badge">Best Deal</div>
+            <div class="p-cta">View Bundle →</div>
+        </a>
+    
+
+        <a href="/product/safaricom-45-mins-3-hours-17.html" class="popular-package safaricom">
+            <div class="p-name">45 Minutes</div>
+            <div class="p-price">Ksh 19</div>
+            <div class="p-validity">3 Hours</div>
+            <div class="p-badge">Best Value</div>
+            <div class="p-cta">View Bundle →</div>
+        </a>
+    
+
+        <a href="/product/safaricom-1-25-gb-midnight-1.html" class="popular-package safaricom">
+            <div class="p-name">1.25 GB Data</div>
+            <div class="p-price">Ksh 50</div>
+            <div class="p-validity">Midnight</div>
+            <div class="p-badge">Popular</div>
+            <div class="p-cta">View Bundle →</div>
+        </a>
+    
+
+        <a href="/product/airtel-14-gb-30-days-27.html" class="popular-package airtel">
+            <div class="p-name">14 GB Data</div>
+            <div class="p-price">Ksh 149</div>
+            <div class="p-validity">30 Days</div>
+            <div class="p-badge">Big Saver</div>
+            <div class="p-cta">View Bundle →</div>
+        </a>
+    
+    </div>
+    
+
+            <!-- ===== INTRODUCTION ===== -->
+            <p>Your <strong>Bingwa Data portal</strong> is the central hub for managing your account, checking your bundle balance, reviewing purchase history, and more. Logging in gives you full control over your bundles and account settings.</p>
+            <p>This guide walks you through the login process, explains the features available in the portal, and helps you troubleshoot any login issues you may encounter.</p>
+
+            <h2 id="why-login">Why Log In to Your Portal?</h2>
+            <p>Logging into your Bingwa Data account gives you access to:</p>
+            <ul>
+                <li><strong>Check balance:</strong> See how much data, minutes, or SMS you have left.</li>
+                <li><strong>Purchase history:</strong> View all your past bundle purchases with dates and amounts.</li>
+                <li><strong>Gift bundles:</strong> Send bundles to friends and family easily.</li>
+                <li><strong>Manage profile:</strong> Update your personal information and contact details.</li>
+                <li><strong>Track subscriptions:</strong> See all your active bundles and their validity periods.</li>
+            </ul>
+            <div class="info-box">
+                <strong>Tip:</strong> Bookmark the login page for quick access to your account anytime.
+            </div>
+
+            <h2 id="login-steps">How to Log In</h2>
+            <p>Follow these simple steps to access your Bingwa Data portal:</p>
+            <ol>
+                <li><strong>Visit our website:</strong> Go to <a href="../index.html">datasokoni.com</a>.</li>
+                <li><strong>Click 'Login':</strong> Find the <strong>"Login"</strong> button at the top right corner of the page.</li>
+                <li><strong>Enter your credentials:</strong>
+                    <ul>
+                        <li><strong>Email or Phone:</strong> Enter the email address or phone number you used during registration.</li>
+                        <li><strong>Password:</strong> Enter your account password.</li>
+                    </ul>
+                </li>
+                <li><strong>Click 'Login':</strong> This will redirect you to your account dashboard.</li>
+                <li><strong>Explore your dashboard:</strong> You'll see your balance, recent orders, and available bundles.</li>
+            </ol>
+            <div class="success-box">
+                ✅ <strong>Pro Tip:</strong> Use "Remember Me" to stay logged in on your personal device.
+            </div>
+
+            <h2 id="portal-features">Portal Features Overview</h2>
+            <p>Once logged in, you can access the following features:</p>
+
+            <div class="portal-features">
+                <div class="portal-feature">
+                    <span class="icon">📊</span>
+                    <h4>Bundle Balance</h4>
+                    <p>View remaining data, minutes, and SMS in real-time.</p>
+                </div>
+                <div class="portal-feature">
+                    <span class="icon">📋</span>
+                    <h4>Order History</h4>
+                    <p>Track all your past purchases and payment records.</p>
+                </div>
+                <div class="portal-feature">
+                    <span class="icon">🎁</span>
+                    <h4>Gift Bundles</h4>
+                    <p>Send bundles to any Safaricom or Airtel number.</p>
+                </div>
+                <div class="portal-feature">
+                    <span class="icon">👤</span>
+                    <h4>Profile Settings</h4>
+                    <p>Update your name, email, phone, and password.</p>
+                </div>
+                <div class="portal-feature">
+                    <span class="icon">📱</span>
+                    <h4>Active Subscriptions</h4>
+                    <p>See all active bundles and their expiry dates.</p>
+                </div>
+                <div class="portal-feature">
+                    <span class="icon">🔔</span>
+                    <h4>Notifications</h4>
+                    <p>Receive updates on promotions and bundle status.</p>
+                </div>
+            </div>
+
+            <h2 id="troubleshooting">Troubleshooting Login Issues</h2>
+            <p>If you're having trouble logging in, try these solutions:</p>
+
+            <ul>
+                <li><strong>Forgot Password:</strong> Click the "Forgot Password" link on the login page. Enter your phone number or email to receive a password reset link.</li>
+                <li><strong>Check Credentials:</strong> Ensure you're using the correct phone number or email and password. Passwords are case-sensitive.</li>
+                <li><strong>Clear Cache:</strong> Clear your browser cache and cookies, then try again.</li>
+                <li><strong>Use a Different Browser:</strong> Try logging in from a different browser or device.</li>
+                <li><strong>Contact Support:</strong> If you still can't log in, contact our support team via WhatsApp at 0743731749 for assistance.</li>
+            </ul>
+
+            <div class="warning-box">
+                <strong>Security Tip:</strong> Never share your password with anyone. Bingwa Data will never ask for your password via phone or email.
+            </div>
+
+            <!-- ===== TILL BOX ===== -->
+            <div class="till-box">
+                <span>M-PESA Till: <strong>1621614</strong></span>
+                <button onclick="copyTill()" id="copyBtn">Copy</button>
+            </div>
+
+            <!-- ===== TRUST BADGE ===== -->
+            <div class="trust-badge">
+                <div class="badge-icon">🛡️</div>
+                <div class="badge-text">
+                    <h4>Verified Merchant – Till 1621614</h4>
+                    <p>Secure M-PESA STK Push payments. 24/7 customer support via WhatsApp and email.</p>
+                </div>
+            </div>
+
+            <!-- ===== CTA #2 ===== -->
+            <a href="../index.html" class="cta-button">🚀 Login Now – Manage Your Account</a>
+
+            <!-- ===== AUTHOR BOX ===== -->
+            <div class="author-box">
+                <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSo8abLBhpjJ4R4Ieidzm2VlKWzWtIlpkbPWQ&s" alt="Bingwa Data Telecom Team" width="60" height="60">
+                <div>
+                    <p><strong>Written by the Bingwa Data Telecom Team</strong><br>
+                    Telecom and bundle experts. Helping you save money on data and minutes.<br>
+                    <em>Last reviewed: July 26, 2026</em></p>
+                </div>
+            </div>
+
+            <!-- ===== FAQ SECTION ===== -->
+            <h2 id="faq">Frequently Asked Questions</h2>
+            <div class="faq-item">
+                <strong>How do I log in to my Bingwa Data portal?</strong>
+                <p>Visit datasokoni.com, click 'Login' at the top right, enter your phone number or email and password, then click 'Login' to access your dashboard.</p>
+            </div>
+            <div class="faq-item">
+                <strong>What if I forgot my password?</strong>
+                <p>Click the 'Forgot Password' link on the login page. Enter your phone number or email and we'll send you a reset link.</p>
+            </div>
+            <div class="faq-item">
+                <strong>What can I do in the portal?</strong>
+                <p>You can check your bundle balance, view purchase history, gift bundles to others, manage your profile, and track active subscriptions.</p>
+            </div>
+            <div class="faq-item">
+                <strong>Is the portal available on mobile?</strong>
+                <p>Yes, the portal is fully responsive and works on all smartphones, tablets, and desktop computers.</p>
+            </div>
+            <div class="faq-item">
+                <strong>Can I change my password from the portal?</strong>
+                <p>Yes, go to Profile Settings in your dashboard and select "Change Password" to update it.</p>
+            </div>
+
+        </div>
+
+        <!-- ===== RELATED POSTS ===== -->
+        <div class="related-posts">
+            <h3>You might also like</h3>
+            <ul>
+                <li>
+                    <img src="https://datasokoni.com/assets/logo.png" alt="Registration Guide" width="65" height="65">
+                    <div>
+                        <a href="how-to-register-on-bingwa-data-step-by-step.html">How to Register on Bingwa Data – Step-by-Step Guide</a>
+                    </div>
+                </li>
+                <li>
+                    <img src="https://datasokoni.com/assets/logo.png" alt="Payment Process" width="65" height="65">
+                    <div>
+                        <a href="how-does-bingwa-data-pay-payment-process.html">How Does Bingwa Data Pay? – Payment Process</a>
+                    </div>
+                </li>
+                <li>
+                    <img src="https://datasokoni.com/assets/logo.png" alt="Bundles Guide" width="65" height="65">
+                    <div>
+                        <a href="bingwa-data-bundles-data-minutes-sms-guide.html">Bingwa Data Bundles – Data, Minutes & SMS Guide</a>
+                    </div>
+                </li>
+            </ul>
+        </div>
+
+    </div>
+
+    <!-- ===== FOOTER ===== -->
+    <footer class="footer">
+        <div class="footer-grid">
+            <div class="footer-about">
+                <h3 class="footer-logo">Bingwa<span>Data</span></h3>
+                <p>Your number one stop for affordable internet bundles. Secure payments via M-PESA Till 1621614.</p>
+            </div>
+            <div class="footer-support">
+                <h4>Support</h4>
+                <ul>
+                    <li><a href="https://wa.me/254743731749">WhatsApp Help</a></li>
+                    <li><a href="mailto:support@datasokoni.com">Email Us</a></li>
+                </ul>
+            </div>
+            <div class="footer-links">
+                <h4>Quick Links</h4>
+                <ul>
+                    <li><a href="/blog.html">Blogs</a></li>
+                    <li><a href="/faq.html">FAQs</a></li>
+                    <li><a href="/about.html">About Us</a></li>
+                    <li><a href="/terms.html">Terms of Service</a></li>
+                </ul>
+            </div>
+        </div>
+        <div class="footer-bottom">
+            <p>&copy; 2026 Bingwa Data | Built for Speed.</p>
+            <p class="disclaimer">Payments secured via M-PESA STK Push (Till 1621614). Independent reseller platform – not affiliated with Safaricom or Airtel.</p>
+        </div>
+    </footer>
+
+    <script>
+        function copyTill() {
+            navigator.clipboard.writeText("1621614");
+            const btn = document.getElementById("copyBtn");
+            btn.innerText = "Copied! ✅";
+            setTimeout(() => btn.innerText = "Copy", 2000);
+        }
+    </script>
+
+</body>
+</html>

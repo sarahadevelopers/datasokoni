@@ -1,0 +1,26 @@
+# ────── SECRETS — NEVER COMMIT ──────
+.env
+.env.*
+!.env.example
+
+# ────── Node dependencies ──────
+node_modules/
+backend/node_modules/
+
+# ────── Local backups ──────
+backup-509947-*/
+blog-brand-backup/
+blog-title-date-backup/
+
+# ────── Editor / OS ──────
+.vscode/
+.DS_Store
+Thumbs.db
+
+# ────── Logs ──────
+*.log
+npm-debug.log*
+
+# ────── Dead code ──────
+critical-old.css
+script-old.js
