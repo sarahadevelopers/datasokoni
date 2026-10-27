@@ -5,9 +5,6 @@
 // ============================================
 
 // ---------- Shared secret (must match API_SECRET in Render) ----------
-// ⚠️ SECURITY NOTE: exposed to anyone viewing page source. Origin allow-list
-// on the backend is the primary gate; this is a fallback for non-whitelisted
-// origins. Move to a server-side proxy before scaling traffic.
 const API_SECRET = "103e07b75c0b3d874cd4376dd0e095729f66d4f268033061aa087df169acc4ac4";
 
 // ---------- reCAPTCHA site key ----------
@@ -165,15 +162,15 @@ function initiatePayment(product, payerNumber, recipientNumber, action) {
         ? window.API_BASE_URL + "/api/pay"
         : "https://saraha-pay-daraja.onrender.com/api/pay";
 
-    // Build a stable bundle SKU for the delivery worker.
-    // Format: SAF_<productId>_<price>  →  e.g. SAF_44_19
+    // Build the SKU string that the backend & delivery worker will read.
     const bundleSku = `SAF_${product.id}_${product.price}`;
 
+    // THE FIX: bundle_sku is now correctly included in the payload
     const payload = {
         name: product.title,
         phone: payerNumber,
         amount: product.price,
-        
+        bundle_sku: bundleSku, 
         bundle_id: product.id,
         recipient: action === "gift" ? recipientNumber : payerNumber,
         source: "datasokoni-web",
@@ -292,14 +289,14 @@ if (repeatBuyBtn) {
     });
 }
 
-// ---------- Live Notifications (Safaricom only) ----------
+// ---------- Live Notifications (Updated to Safaricom Poster) ----------
 const purchaseMessages = [
-    "🔥 Someone in Nairobi just bought 2GB for Ksh 100!",
+    "🔥 Someone in Nairobi just bought 2GB for Ksh 105!",
     "⚡ Mombasa user just grabbed 1GB for Ksh 19!",
-    "📞 Nakuru customer purchased 45 minutes for Ksh 19",
+    "📞 Nakuru customer purchased 45 Mins for Ksh 21",
     "📱 Kisumu user topped up 1.5GB for 3 hours",
-    "💬 Eldoret user bought 20 SMS for Ksh 4",
-    "🚀 Thika resident just grabbed 1.25GB for Ksh 50!"
+    "💬 Eldoret user bought 20 SMS for Ksh 5",
+    "🚀 Thika resident just grabbed 250MB for Ksh 20!"
 ];
 
 let notifIndex = 0;
@@ -319,9 +316,6 @@ function startLiveNotifications() {
 }
 
 // ---------- Init ----------
-// Wait for critical.js to populate the `products` global before showing
-// anything that reads it. `let products` in critical.js is script-scoped and
-// accessible from here — this just ensures load order doesn't matter.
 function waitForProducts() {
     if (typeof products !== 'undefined' && products.length) {
         startLiveNotifications();
