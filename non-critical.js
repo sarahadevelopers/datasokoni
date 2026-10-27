@@ -1,28 +1,32 @@
 // non-critical.js
 // ============================================
-// Payment Modal, Quick Buy, Live Notifications, Hero Section (Top Picks)
+// Payment Modal, Quick Buy, Live Notifications
+// Safaricom-only build
 // ============================================
 
 // ---------- Shared secret (must match API_SECRET in Render) ----------
-const API_SECRET = "103e07b75c0b3d874cd4376dd0e095729f66d4f26803361aa087df169acc4ac4";
+// ⚠️ SECURITY NOTE: exposed to anyone viewing page source. Origin allow-list
+// on the backend is the primary gate; this is a fallback for non-whitelisted
+// origins. Move to a server-side proxy before scaling traffic.
+const API_SECRET = "103e07b75c0b3d874cd4376dd0e095729f66d4f268033061aa087df169acc4ac4";
 
-// ---------- reCAPTCHA site key (from Google) ----------
+// ---------- reCAPTCHA site key ----------
 const RECAPTCHA_SITE_KEY = "6LcKDGEtAAAAAJKAWjXB7j5bSIPvzz94wBWapTD5";
 
 // ---------- Modal Event Attachment ----------
 function attachModalEvents() {
     const modal = document.getElementById('paymentModal');
     if (!modal) return;
-    
+
     const closeBtn = modal.querySelector('.close');
     if (closeBtn) {
         closeBtn.removeEventListener('click', closeModal);
         closeBtn.addEventListener('click', closeModal);
     }
-    
+
     modal.removeEventListener('click', outsideClickHandler);
     modal.addEventListener('click', outsideClickHandler);
-    
+
     const doneBtn = modal.querySelector('.done-btn');
     if (doneBtn) {
         doneBtn.removeEventListener('click', closeModal);
@@ -36,14 +40,14 @@ function outsideClickHandler(e) {
     }
 }
 
-// ---------- Lazy‑load modal HTML when needed ----------
+// ---------- Lazy-load modal HTML ----------
 function ensureModalExists() {
     let modal = document.getElementById('paymentModal');
     if (modal) {
         attachModalEvents();
         return;
     }
-    
+
     const modalHTML = `
         <div id="paymentModal" class="modal">
             <div class="modal-content">
@@ -56,7 +60,7 @@ function ensureModalExists() {
                 <div id="modalSuccess" style="display: none;" class="success-container">
                     <div class="checkmark">✔</div>
                     <h3>Payment Successful!</h3>
-                    <p>Your bundle is being processed. Thank you for choosing DataSokonini.</p>
+                    <p>Your bundle is being processed. Thank you for choosing Bingwa Data.</p>
                     <button class="done-btn">Done</button>
                 </div>
             </div>
@@ -72,13 +76,12 @@ let currentAction = null;
 const phonePattern = '^(07[0-9]{8}|011[0-9]{7}|2547[0-9]{8}|25411[0-9]{7})$';
 
 function validatePhone(phone) {
-    const regex = new RegExp(phonePattern);
-    return regex.test(phone);
+    return new RegExp(phonePattern).test(phone);
 }
 
 function openPaymentModal(product, action) {
     ensureModalExists();
-    
+
     selectedProduct = product;
     currentAction = action;
     const savedNumber = localStorage.getItem("DataSokonini_saved_number") || "";
@@ -153,7 +156,7 @@ function openPaymentModal(product, action) {
     document.getElementById("paymentModal").style.display = "flex";
 }
 
-// ---------- Initiate Payment (with reCAPTCHA & Secret) ----------
+// ---------- Initiate Payment ----------
 function initiatePayment(product, payerNumber, recipientNumber, action) {
     document.getElementById("modalBody").style.display = "none";
     document.getElementById("modalSpinner").style.display = "block";
@@ -162,14 +165,21 @@ function initiatePayment(product, payerNumber, recipientNumber, action) {
         ? window.API_BASE_URL + "/api/pay"
         : "https://saraha-pay-daraja.onrender.com/api/pay";
 
+    // Build a stable bundle SKU for the delivery worker.
+    // Format: SAF_<productId>_<price>  →  e.g. SAF_44_19
+    const bundleSku = `SAF_${product.id}_${product.price}`;
+
     const payload = {
         name: product.title,
         phone: payerNumber,
         amount: product.price,
-        recipient: action === "gift" ? recipientNumber : undefined
+        
+        bundle_id: product.id,
+        recipient: action === "gift" ? recipientNumber : payerNumber,
+        source: "datasokoni-web",
+        action: action
     };
 
-    // Check if reCAPTCHA is available
     if (typeof grecaptcha === 'undefined') {
         console.error("reCAPTCHA not loaded – aborting payment");
         alert("Security verification failed. Please refresh the page and try again.");
@@ -177,7 +187,6 @@ function initiatePayment(product, payerNumber, recipientNumber, action) {
         return;
     }
 
-    // Use grecaptcha.ready() to ensure it's fully loaded
     grecaptcha.ready(() => {
         grecaptcha.execute(RECAPTCHA_SITE_KEY, { action: 'payment' })
             .then(token => {
@@ -187,7 +196,6 @@ function initiatePayment(product, payerNumber, recipientNumber, action) {
                     closeModal();
                     return;
                 }
-                // Send the request with the token
                 sendPaymentRequest(apiUrl, payload, token, product, action);
             })
             .catch(err => {
@@ -198,7 +206,7 @@ function initiatePayment(product, payerNumber, recipientNumber, action) {
     });
 }
 
-// ---------- Actual fetch with headers ----------
+// ---------- Actual fetch ----------
 function sendPaymentRequest(apiUrl, payload, recaptchaToken, product, action) {
     fetch(apiUrl, {
         method: "POST",
@@ -235,18 +243,18 @@ function sendPaymentRequest(apiUrl, payload, recaptchaToken, product, action) {
 function closeModal() {
     const modal = document.getElementById("paymentModal");
     if (!modal) return;
-    
+
     modal.style.display = "none";
     document.body.classList.remove("modal-open");
-    
+
     const modalBody = document.getElementById("modalBody");
     const modalSpinner = document.getElementById("modalSpinner");
     const modalSuccess = document.getElementById("modalSuccess");
-    
+
     if (modalBody) modalBody.style.display = "block";
     if (modalSpinner) modalSpinner.style.display = "none";
     if (modalSuccess) modalSuccess.style.display = "none";
-    
+
     selectedProduct = null;
     currentAction = null;
 }
@@ -284,14 +292,14 @@ if (repeatBuyBtn) {
     });
 }
 
-// ---------- Live Notifications ----------
+// ---------- Live Notifications (Safaricom only) ----------
 const purchaseMessages = [
-    "🔥 Someone in Nairobi just bought 1.25GB!",
-    "📞 Customer in Mombasa purchased 45 minutes",
-    "⚡ Nakuru user just got 2.5GB data!",
-    "📱 Kisumu customer topped up 1GB",
-    "💬 Eldoret user bought 50 minutes",
-    "🚀 Thika resident just grabbed 1GB for 1 hour!"
+    "🔥 Someone in Nairobi just bought 2GB for Ksh 100!",
+    "⚡ Mombasa user just grabbed 1GB for Ksh 19!",
+    "📞 Nakuru customer purchased 45 minutes for Ksh 19",
+    "📱 Kisumu user topped up 1.5GB for 3 hours",
+    "💬 Eldoret user bought 20 SMS for Ksh 4",
+    "🚀 Thika resident just grabbed 1.25GB for Ksh 50!"
 ];
 
 let notifIndex = 0;
@@ -310,54 +318,12 @@ function startLiveNotifications() {
     }, 25000);
 }
 
-// ---------- Hero Section (Top Picks) ----------
-function renderHeroSection() {
-    const heroContainer = document.getElementById("heroScroll");
-    if (!heroContainer) return;
-    if (typeof products === 'undefined') return;
-    const topPickIds = [1, 23, 17, 30, 41, 10];
-    const topPicks = products.filter(p => topPickIds.includes(p.id)).slice(0, 6);
-    if (topPicks.length === 0) return;
-
-    heroContainer.innerHTML = topPicks.map(product => `
-        <div class="hero-card ${product.network.toLowerCase()}" data-product-id="${product.id}">
-            <div class="network-strip" style="background: ${product.network === "Safaricom" ? "var(--safaricom)" : product.network === "Airtel" ? "var(--airtel)" : "var(--utility)"};"></div>
-            <div class="featured-badge">⭐ Top Pick</div>
-            <div class="card-header">
-                <div class="product-title">${product.title}</div>
-                <div class="validity-badge">${product.validity}</div>
-            </div>
-            <div class="price-container">
-                <span class="currency">Ksh</span>
-                <span class="price-value">${product.price}</span>
-            </div>
-            <div class="okoa-badge">⚡ Okoa Friendly</div>
-            <div class="actions">
-                <button class="btn-buy">Buy Now</button>
-                <button class="btn-gift">Gift</button>
-            </div>
-        </div>
-    `).join("");
-
-    document.querySelectorAll(".hero-card").forEach(card => {
-        const productId = parseInt(card.dataset.productId);
-        const product = products.find(p => p.id === productId);
-        if (!product) return;
-        card.querySelector(".btn-buy").addEventListener("click", (e) => {
-            e.stopPropagation();
-            openPaymentModal(product, "buy");
-        });
-        card.querySelector(".btn-gift").addEventListener("click", (e) => {
-            e.stopPropagation();
-            openPaymentModal(product, "gift");
-        });
-    });
-}
-
-// ---------- Wait for critical.js to define products ----------
+// ---------- Init ----------
+// Wait for critical.js to populate the `products` global before showing
+// anything that reads it. `let products` in critical.js is script-scoped and
+// accessible from here — this just ensures load order doesn't matter.
 function waitForProducts() {
     if (typeof products !== 'undefined' && products.length) {
-        renderHeroSection();
         startLiveNotifications();
         setTimeout(() => {
             if (localStorage.getItem('DataSokonini_last_bundle')) showQuickBuyBar();
@@ -367,7 +333,6 @@ function waitForProducts() {
     }
 }
 
-// ===== FIX: Ensure close button works on existing modals =====
 document.addEventListener('DOMContentLoaded', function() {
     if (document.getElementById('paymentModal')) {
         attachModalEvents();

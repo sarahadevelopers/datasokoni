@@ -395,87 +395,57 @@
     </footer>
 
     <!-- Scripts -->
-    <script>
-        // ===== PRODUCT DATA (Updated Prices + Unique Descriptions) =====
+       <script>
+        // ===== PRODUCT DATA (Official Poster Packages) =====
         const products = [
-    // ===== SAFARICOM DATA =====
-    { id: 1, network: "Safaricom", type: "data", title: "1.25 GB", validity: "Midnight", price: 50 },
-    { id: 2, network: "Safaricom", type: "data", title: "2.5 GB", validity: "24 Hours", price: 95 },
-    { id: 3, network: "Safaricom", type: "data", title: "7 GB", validity: "7 Days", price: 195 },
-    { id: 4, network: "Safaricom", type: "data", title: "1.5 GB", validity: "3 Hours", price: 22 },
-    { id: 5, network: "Safaricom", type: "data", title: "1 GB", validity: "1 Hour", price: 13 },
-    { id: 6, network: "Safaricom", type: "data", title: "600 MB", validity: "7 Days", price: 40 },
-    { id: 7, network: "Safaricom", type: "data", title: "500 MB", validity: "24 Hours", price: 20 },
-    { id: 8, network: "Safaricom", type: "data", title: "14 GB", validity: "7 Days", price: 350 },
-    { id: 9, network: "Safaricom", type: "data", title: "1.5 GB", validity: "6 Hours", price: 30 },
-    { id: 10, network: "Safaricom", type: "data", title: "300 MB", validity: "24 Hours", price: 15 },
-    { id: 11, network: "Safaricom", type: "data", title: "1 GB", validity: "24 Hours", price: 45 },
+            // Bingwa Data
+            { id: 1, network: "Safaricom", type: "data", title: "1GB", validity: "1 Hour", price: 19 },
+            { id: 2, network: "Safaricom", type: "data", title: "250MB", validity: "24 Hours", price: 20 },
+            { id: 3, network: "Safaricom", type: "data", title: "400MB", validity: "7 Days", price: 49 },
+            { id: 4, network: "Safaricom", type: "data", title: "1GB", validity: "Till Midnight", price: 55 },
+            { id: 5, network: "Safaricom", type: "data", title: "1.5GB", validity: "24 Hours", price: 99 },
+            { id: 6, network: "Safaricom", type: "data", title: "1.5GB", validity: "3 Hours", price: 52 },
+            
+            // Tunukiwa Data
+            { id: 7, network: "Safaricom", type: "data", title: "1GB", validity: "1 Hour", price: 22 },
+            { id: 8, network: "Safaricom", type: "data", title: "750MB", validity: "24 Hours", price: 50 },
+            { id: 9, network: "Safaricom", type: "data", title: "2GB", validity: "24 Hours", price: 105 },
 
-    // ===== SAFARICOM MINUTES =====
-    { id: 12, network: "Safaricom", type: "minutes", title: "250 Mins", validity: "7 Days", price: 150 },
-    { id: 13, network: "Safaricom", type: "minutes", title: "800 Mins", validity: "30 Days", price: 451 },
-    { id: 14, network: "Safaricom", type: "minutes", title: "300 Mins", validity: "30 Days", price: 200 },
-    { id: 15, network: "Safaricom", type: "minutes", title: "100 Mins", validity: "2 Days", price: 50 },
-    { id: 16, network: "Safaricom", type: "minutes", title: "50 Mins", validity: "Midnight", price: 25 },
-    { id: 17, network: "Safaricom", type: "minutes", title: "45 Mins", validity: "3 Hours", price: 19 },
-    { id: 18, network: "Safaricom", type: "minutes", title: "150 Calls/SMS", validity: "No Expiry", price: 71 },
-    { id: 19, network: "Safaricom", type: "minutes", title: "60 Calls/SMS", validity: "No Expiry", price: 18 },
-    { id: 20, network: "Safaricom", type: "minutes", title: "1700 Mins", validity: "30 Days", price: 950 },
-    { id: 21, network: "Safaricom", type: "minutes", title: "500 Mins", validity: "7 Days", price: 249 },
-    { id: 22, network: "Safaricom", type: "minutes", title: "1250 Mins", validity: "30 Days", price: 800 },
-    { id: 23, network: "Safaricom", type: "minutes", title: "150 Mins/2GB", validity: "7 Days", price: 145 },
-    { id: 24, network: "Safaricom", type: "minutes", title: "550 Mins/6GB", validity: "30 Days", price: 499 },
-    { id: 25, network: "Safaricom", type: "sms", title: "20 SMS", validity: "24 Hours", price: 4 },
+            // Minutes
+            { id: 10, network: "Safaricom", type: "minutes", title: "45 Mins", validity: "3 Hours", price: 21 },
+            { id: 11, network: "Safaricom", type: "minutes", title: "60 Mins", validity: "Till Midnight", price: 51 },
+            { id: 12, network: "Safaricom", type: "minutes", title: "250 Mins", validity: "7 Days", price: 200 },
+            { id: 13, network: "Safaricom", type: "minutes", title: "500 Mins", validity: "30 Days", price: 500 },
+            { id: 14, network: "Safaricom", type: "minutes", title: "1250 Mins", validity: "30 Days", price: 1000 },
 
-    // ===== AIRTEL DATA =====
-    { id: 26, network: "Airtel", type: "data", title: "2 GB", validity: "3 Days", price: 60 },
-    { id: 27, network: "Airtel", type: "data", title: "14 GB", validity: "30 Days", price: 149 },
-    { id: 28, network: "Airtel", type: "data", title: "30 GB", validity: "30 Days", price: 890 },
-    { id: 29, network: "Airtel", type: "data", title: "45 GB/400 Mins", validity: "30 Days", price: 990 },
-    { id: 30, network: "Airtel", type: "data", title: "2 GB", validity: "Midnight", price: 42 },
-    { id: 31, network: "Airtel", type: "data", title: "7.5 GB", validity: "30 Days", price: 399 },
-    { id: 32, network: "Airtel", type: "data", title: "90 GB/900Mins", validity: "30 Days", price: 1290 },
-    { id: 33, network: "Airtel", type: "data", title: "200 MB/25Mins", validity: "24 Hours", price: 22 },
-    { id: 34, network: "Airtel", type: "data", title: "1.5 GB", validity: "3 Hours", price: 20 },
-    { id: 35, network: "Airtel", type: "data", title: "1 GB", validity: "24 Hours", price: 39 },
-    { id: 36, network: "Airtel", type: "data", title: "1.2 GB", validity: "7 Days", price: 88 },
-    { id: 37, network: "Airtel", type: "data", title: "7 GB", validity: "7 Days", price: 150 },
-    { id: 38, network: "Airtel", type: "data", title: "14 GB", validity: "7 Days", price: 199 },
-    { id: 39, network: "Airtel", type: "data", title: "1,000 SMS", validity: "7 Days", price: 31 },
-    { id: 40, network: "Airtel", type: "data", title: "1.2 GB", validity: "1 Hour", price: 10 },
-    { id: 41, network: "Airtel", type: "data", title: "300 MB", validity: "24 Hours", price: 15 },
-    { id: 42, network: "Airtel", type: "data", title: "100 Mins", validity: "7 Days", price: 80 }
-];
+            // Monthly Deals
+            { id: 15, network: "Safaricom", type: "data", title: "2.5GB", validity: "30 Days", price: 250 },
+            { id: 16, network: "Safaricom", type: "data", title: "7GB", validity: "30 Days", price: 495 },
+            { id: 17, network: "Safaricom", type: "data", title: "21GB", validity: "30 Days", price: 990 },
+            { id: 18, network: "Safaricom", type: "data", title: "8GB + 400 Mins", validity: "30 Days", price: 995 },
 
-        // ===== HELPER: Generate slug (UPDATED – matches generator) =====
-       // ===== HELPER: Generate slug (FIXED – includes validity) =====
-function getSlug(product) {
-    const networkPrefix = product.network.toLowerCase();
-    const titleSlug = product.title
-        .toLowerCase()
-        .replace(/\s+/g, '-')
-        .replace(/\//g, '-')
-        .replace(/[^a-z0-9-]/g, '');
-    const validitySlug = product.validity
-        .toLowerCase()
-        .replace(/\s+/g, '-')
-        .replace(/\//g, '-')
-        .replace(/[^a-z0-9-]/g, '');
-    return `${networkPrefix}-${titleSlug}-${validitySlug}-${product.id}`;
-}
-     // ===== RENDER PRODUCTS =====
+            // SMS
+            { id: 19, network: "Safaricom", type: "sms", title: "20 SMS", validity: "1 Day", price: 5 },
+            { id: 20, network: "Safaricom", type: "sms", title: "200 SMS", validity: "1 Day", price: 10 },
+            { id: 21, network: "Safaricom", type: "sms", title: "1000 SMS", validity: "7 Days", price: 30 },
+            { id: 22, network: "Safaricom", type: "sms", title: "1500 SMS", validity: "30 Days", price: 101 }
+        ];
+
+        // ===== HELPER: Generate slug =====
+        function getSlug(product) {
+            const networkPrefix = product.network.toLowerCase();
+            const titleSlug = product.title.toLowerCase().replace(/\s+/g, '-').replace(/\//g, '-').replace(/[^a-z0-9-]/g, '');
+            const validitySlug = product.validity.toLowerCase().replace(/\s+/g, '-').replace(/\//g, '-').replace(/[^a-z0-9-]/g, '');
+            return `${networkPrefix}-${titleSlug}-${validitySlug}-${product.id}`;
+        }
+
+        // ===== RENDER PRODUCTS =====
         function renderProducts(filter = 'all') {
             const grid = document.getElementById('productGridDirectory');
-
             let filtered = products;
 
-            // Apply network filter
-            if (filter === 'Safaricom' || filter === 'Airtel') {
-                filtered = filtered.filter(p => p.network === filter);
-            }
-
             // Apply type filter
-            if (filter === 'data' || filter === 'minutes' || filter === 'sms') {
+            if (filter !== 'all') {
                 filtered = filtered.filter(p => p.type === filter);
             }
 
@@ -486,10 +456,8 @@ function getSlug(product) {
 
             grid.innerHTML = filtered.map(product => {
                 const slug = getSlug(product);
-                const networkClass = product.network === 'Airtel' ? 'airtel' : 'safaricom';
-
                 return `
-                <a href="/product/${slug}.html" class="product-card-directory ${networkClass}">
+                <a href="/product/${slug}.html" class="product-card-directory safaricom">
                     <div class="network-strip"></div>
                     <div class="card-header">
                         <span class="product-title">${product.title}</span>
@@ -509,10 +477,8 @@ function getSlug(product) {
         // ===== FILTER LOGIC =====
         document.querySelectorAll('.filter-btn').forEach(btn => {
             btn.addEventListener('click', function() {
-                // Remove active from all
                 document.querySelectorAll('.filter-btn').forEach(b => b.classList.remove('active'));
                 this.classList.add('active');
-
                 const filter = this.dataset.filter;
                 renderProducts(filter);
             });

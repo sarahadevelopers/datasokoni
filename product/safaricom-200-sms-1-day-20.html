@@ -4,29 +4,29 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=yes, viewport-fit=cover">
 
-    <title>300 MB – 15 (24 Hours) | Bingwa Data</title>
+    <title>200 SMS - 1 Day | Bingwa Data</title>
 
-    <meta name="description" content="Get 300 MB for just 15 valid 24 Hours. Okoa friendly, instant delivery via M-PESA Till 1621614. Buy cheap data bundles online with Bingwa Data.">
+    <meta name="description" content="Get {{PRODUCT_NAME}} for just {{PRICE}} valid {{VALIDITY}}. Okoa friendly, instant delivery via M-PESA Till 1621614. Buy cheap data bundles online with Bingwa Data.">
 
-    <meta name="keywords" content="300 MB, Bingwa Data, Safaricom data, cheap bundles Kenya, Okoa friendly, buy Safaricom data, instant delivery, internet deals Kenya">
+    <meta name="keywords" content="{{PRODUCT_NAME}}, Bingwa Data, Safaricom data, cheap bundles Kenya, Okoa friendly, buy Safaricom data, instant delivery, internet deals Kenya">
 
     <meta name="robots" content="index, follow">
 
-    <link rel="canonical" href="https://datasokoni.com/product/safaricom-300-mb-24-hours-10.html">
+    <link rel="canonical" href="https://datasokoni.com/product/{{SLUG}}.html">
 
     <!-- Open Graph -->
-    <meta property="og:title" content="300 MB – 15 (24 Hours) | Bingwa Data">
-    <meta property="og:description" content="Get 300 MB for just 15 valid 24 Hours. Okoa friendly, instant delivery. Buy cheap data bundles online with Bingwa Data.">
+    <meta property="og:title" content="{{PRODUCT_NAME}} – {{PRICE}} ({{VALIDITY}}) | Bingwa Data">
+    <meta property="og:description" content="Get {{PRODUCT_NAME}} for just {{PRICE}} valid {{VALIDITY}}. Okoa friendly, instant delivery. Buy cheap data bundles online with Bingwa Data.">
     <meta property="og:type" content="product">
-    <meta property="og:url" content="https://datasokoni.com/product/safaricom-300-mb-24-hours-10.html">
-    <meta property="og:image" content="https://datasokoni.com/assets/product-safaricom-300-mb-24-hours-10.jpg">
+    <meta property="og:url" content="https://datasokoni.com/product/{{SLUG}}.html">
+    <meta property="og:image" content="https://datasokoni.com/assets/product-{{SLUG}}.jpg">
     <meta property="og:site_name" content="Bingwa Data">
 
     <!-- Twitter Card -->
     <meta name="twitter:card" content="summary_large_image">
-    <meta name="twitter:title" content="300 MB – 15 (24 Hours) | Bingwa Data">
-    <meta name="twitter:description" content="Get 300 MB for just 15 valid 24 Hours. Okoa friendly, instant delivery.">
-    <meta name="twitter:image" content="https://datasokoni.com/assets/product-safaricom-300-mb-24-hours-10.jpg">
+    <meta name="twitter:title" content="{{PRODUCT_NAME}} – {{PRICE}} ({{VALIDITY}}) | Bingwa Data">
+    <meta name="twitter:description" content="Get {{PRODUCT_NAME}} for just {{PRICE}} valid {{VALIDITY}}. Okoa friendly, instant delivery.">
+    <meta name="twitter:image" content="https://datasokoni.com/assets/product-{{SLUG}}.jpg">
 
     <!-- Favicons -->
     <link rel="icon" type="image/webp" href="/bingwa-data-favicon.webp">
@@ -857,21 +857,21 @@
     {
       "@context": "https://schema.org",
       "@type": "Product",
-      "name": "300 MB",
-      "description": "Get 300 MB of Safaricom data for just Ksh 15 valid 24 Hours. Perfect for your daily internet needs. Okoa friendly, instant delivery.",
-      "image": "https://datasokoni.com/assets/product-safaricom-300-mb-24-hours-10.webp",
+      "name": "{{PRODUCT_NAME}}",
+      "description": "{{PRODUCT_DESCRIPTION}}",
+      "image": "https://datasokoni.com/assets/product-{{SLUG}}.webp",
       "brand": {
         "@type": "Brand",
-        "name": "Safaricom"
+        "name": "{{NETWORK}}"
       },
-      "sku": "BD-Safaricom-10",
+      "sku": "BD-{{NETWORK}}-{{BUNDLE_ID}}",
       "offers": {
         "@type": "Offer",
-        "price": "15",
+        "price": "{{PRICE}}",
         "priceCurrency": "KES",
-        "priceValidUntil": "2026-07-15",
+        "priceValidUntil": "{{VALIDITY_DATE}}",
         "availability": "https://schema.org/InStock",
-        "url": "https://datasokoni.com/product/safaricom-300-mb-24-hours-10.html",
+        "url": "https://datasokoni.com/product/{{SLUG}}.html",
         "seller": {
           "@type": "Organization",
           "name": "Bingwa Data"
@@ -893,7 +893,7 @@
       "itemListElement": [
         {"@type":"ListItem","position":1,"name":"Home","item":"https://datasokoni.com/"},
         {"@type":"ListItem","position":2,"name":"Products","item":"https://datasokoni.com/products.html"},
-        {"@type":"ListItem","position":3,"name":"300 MB","item":"https://datasokoni.com/product/safaricom-300-mb-24-hours-10.html"}
+        {"@type":"ListItem","position":3,"name":"{{PRODUCT_NAME}}","item":"https://datasokoni.com/product/{{SLUG}}.html"}
       ]
     }
     </script>
@@ -928,22 +928,22 @@
 
     <!-- Breadcrumbs -->
     <div class="product-breadcrumbs">
-        <a href="/">Home</a> › <a href="/products.html">Products</a> › <span>300 MB</span>
+        <a href="/">Home</a> › <a href="/products.html">Products</a> › <span>{{PRODUCT_NAME}}</span>
     </div>
 
     <!-- Product Container -->
-    <div class="product-container ">
+    <div class="product-container {{NETWORK_CLASS}}">
 
         <!-- Product Header -->
         <div class="product-header">
             <div>
-                <span class="network-badge ">Safaricom</span>
-                <span class="validity-badge">⏱️ 24 Hours</span>
-                <h1 class="product-title">300 MB</h1>
+                <span class="network-badge {{NETWORK_CLASS}}">{{NETWORK}}</span>
+                <span class="validity-badge">⏱️ {{VALIDITY}}</span>
+                <h1>200 SMS (1 Day)</h1>
             </div>
             <div class="product-price">
-                <span class="currency">Ksh</span> 15
-                <span class="savings">Save 50%</span>
+                <span class="currency">Ksh</span> {{PRICE}}
+                <span class="savings">Save {{SAVINGS_PERCENT}}%</span>
             </div>
         </div>
 
@@ -954,8 +954,8 @@
 
                 <!-- Left: Image -->
                 <div class="product-image-wrapper">
-                    <img src="/bingwa-data-image-Safaricom.webp" 
-                         alt="300 MB – 15 (24 Hours) | Bingwa Data" 
+                    <img src="/bingwa-data-image-{{NETWORK}}.webp" 
+                         alt="{{PRODUCT_NAME}} – {{PRICE}} ({{VALIDITY}}) | Bingwa Data" 
                          loading="lazy"
                          width="800" 
                          height="600"
@@ -968,13 +968,13 @@
                     <div class="okoa-badge-large">✅ Okoa Friendly</div>
 
                     <p class="product-description">
-                        Get 300 MB of Safaricom data for just Ksh 15 valid 24 Hours. Perfect for your daily internet needs. Okoa friendly, instant delivery. Get instant delivery via M-PESA Till <strong>1621614</strong>.
+                        {{PRODUCT_DESCRIPTION}} Get instant delivery via M-PESA Till <strong>1621614</strong>.
                     </p>
 
                     <ul class="product-features">
-                        <li><strong>300 MB</strong> – 300 MB of data</li>
-                        <li>⏱️ Valid for <strong>24 Hours</strong></li>
-                        <li>📱 Works on <strong>Safaricom</strong></li>
+                        <li><strong>{{PRODUCT_NAME}}</strong> – {{DATA_AMOUNT}} of data</li>
+                        <li>⏱️ Valid for <strong>{{VALIDITY}}</strong></li>
+                        <li>📱 Works on <strong>{{NETWORK}}</strong></li>
                         <li>⚡ Instant delivery via M-PESA</li>
                         <li>✅ Works with <strong>Okoa Jahazi</strong> &amp; Airtel Okoa</li>
                     </ul>
@@ -986,25 +986,25 @@
                             <span class="till-highlight">Till: 1621614</span>
                         </div>
                         <div class="amount-label">
-                            Amount: <strong>Ksh 15</strong>
+                            Amount: <strong>Ksh {{PRICE}}</strong>
                         </div>
                         <div class="buy-actions">
                             <button class="btn-buy-large" 
-                                    data-bundle-id="10" 
-                                    data-bundle-title="300 MB" 
-                                    data-bundle-price="15" 
-                                    data-bundle-network="Safaricom"
-                                    data-bundle-type="data"
-                                    data-bundle-validity="24 Hours">
+                                    data-bundle-id="{{BUNDLE_ID}}" 
+                                    data-bundle-title="{{PRODUCT_NAME}}" 
+                                    data-bundle-price="{{PRICE}}" 
+                                    data-bundle-network="{{NETWORK}}"
+                                    data-bundle-type="{{PRODUCT_TYPE}}"
+                                    data-bundle-validity="{{VALIDITY}}">
                                 Buy Now
                             </button>
                             <button class="btn-gift-large" 
-                                    data-bundle-id="10" 
-                                    data-bundle-title="300 MB" 
-                                    data-bundle-price="15" 
-                                    data-bundle-network="Safaricom"
-                                    data-bundle-type="data"
-                                    data-bundle-validity="24 Hours">
+                                    data-bundle-id="{{BUNDLE_ID}}" 
+                                    data-bundle-title="{{PRODUCT_NAME}}" 
+                                    data-bundle-price="{{PRICE}}" 
+                                    data-bundle-network="{{NETWORK}}"
+                                    data-bundle-type="{{PRODUCT_TYPE}}"
+                                    data-bundle-validity="{{VALIDITY}}">
                                 🎁 Gift a Friend
                             </button>
                         </div>
@@ -1016,12 +1016,12 @@
 
             <!-- ===== HOW TO BUY ===== -->
             <div class="how-to-buy">
-                <h3>📱 How to Buy 300 MB</h3>
+                <h3>📱 How to Buy {{PRODUCT_NAME}}</h3>
                 <ol>
                     <li>Open <strong>M-PESA</strong> on your phone</li>
                     <li>Select <strong>Lipa na M-PESA</strong> → <strong>Buy Goods &amp; Services</strong></li>
                     <li>Enter Till Number <strong>1621614</strong></li>
-                    <li>Enter the exact amount: <strong>Ksh 15</strong></li>
+                    <li>Enter the exact amount: <strong>Ksh {{PRICE}}</strong></li>
                     <li>Enter your <strong>M-PESA PIN</strong> and confirm</li>
                     <li>Your bundle is delivered <strong>instantly</strong> – even with Okoa!</li>
                 </ol>
@@ -1039,7 +1039,7 @@
             <div class="product-faq">
                 <h3>❓ FAQs</h3>
                 <div class="faq-item">
-                    <div class="q">Is 300 MB Okoa friendly?</div>
+                    <div class="q">Is {{PRODUCT_NAME}} Okoa friendly?</div>
                     <div class="a">Yes – 100% Okoa friendly. Buy even with active Okoa Jahazi or Airtel Okoa.</div>
                 </div>
                 <div class="faq-item">
@@ -1059,34 +1059,16 @@
             <!-- ===== SOCIAL SHARE ===== -->
             <div class="social-share">
                 <span>📤 Share this deal:</span>
-                <a href="https://wa.me/?text=Check%20out%20300 MB%20for%20only%20Ksh%2015%20on%20Bingwa%20Data%21%20https%3A%2F%2Fdatasokoni.com%2Fproduct%2Fsafaricom-300-mb-24-hours-10.html" target="_blank" class="whatsapp">📱 WhatsApp</a>
-                <a href="https://twitter.com/intent/tweet?text=Check%20out%20300 MB%20for%20only%20Ksh%2015%20on%20Bingwa%20Data%21&url=https%3A%2F%2Fdatasokoni.com%2Fproduct%2Fsafaricom-300-mb-24-hours-10.html" target="_blank" class="twitter">🐦 Twitter</a>
-                <a href="https://www.facebook.com/sharer/sharer.php?u=https%3A%2F%2Fdatasokoni.com%2Fproduct%2Fsafaricom-300-mb-24-hours-10.html" target="_blank" class="facebook">📘 Facebook</a>
+                <a href="https://wa.me/?text=Check%20out%20{{PRODUCT_NAME}}%20for%20only%20Ksh%20{{PRICE}}%20on%20Bingwa%20Data%21%20https%3A%2F%2Fdatasokoni.com%2Fproduct%2F{{SLUG}}.html" target="_blank" class="whatsapp">📱 WhatsApp</a>
+                <a href="https://twitter.com/intent/tweet?text=Check%20out%20{{PRODUCT_NAME}}%20for%20only%20Ksh%20{{PRICE}}%20on%20Bingwa%20Data%21&url=https%3A%2F%2Fdatasokoni.com%2Fproduct%2F{{SLUG}}.html" target="_blank" class="twitter">🐦 Twitter</a>
+                <a href="https://www.facebook.com/sharer/sharer.php?u=https%3A%2F%2Fdatasokoni.com%2Fproduct%2F{{SLUG}}.html" target="_blank" class="facebook">📘 Facebook</a>
             </div>
 
             <!-- ===== RELATED PRODUCTS ===== -->
             <div class="related-products">
                 <h3>🔥 You might also like</h3>
                 <div class="related-grid">
-                    
-        <a href="/product/safaricom-60-calls-sms-no-expiry-19.html" class="related-card">
-            <div class="r-name">60 Calls/SMS</div>
-            <div class="r-price">Ksh 18</div>
-            <div class="r-validity">⏱️ No Expiry</div>
-        </a>
-        
-        <a href="/product/safaricom-50-mins-midnight-16.html" class="related-card">
-            <div class="r-name">50 Mins</div>
-            <div class="r-price">Ksh 25</div>
-            <div class="r-validity">⏱️ Midnight</div>
-        </a>
-        
-        <a href="/product/safaricom-800-mins-30-days-13.html" class="related-card">
-            <div class="r-name">800 Mins</div>
-            <div class="r-price">Ksh 451</div>
-            <div class="r-validity">⏱️ 30 Days</div>
-        </a>
-        
+                    {{RELATED_PRODUCTS}}
                 </div>
             </div>
 
@@ -1101,7 +1083,7 @@
 
 <!-- ===== MOBILE BUY BAR (Fixed Bottom) ===== -->
 <div class="mobile-buy-bar" id="mobileBuyBar">
-    <span class="m-price">Ksh 15</span>
+    <span class="m-price">Ksh {{PRICE}}</span>
     <button class="m-btn" onclick="document.querySelector('.btn-buy-large').click()">Buy Now</button>
 </div>
 
@@ -1174,7 +1156,7 @@
                     price: parseInt(this.dataset.bundlePrice),
                     network: this.dataset.bundleNetwork,
                     type: this.dataset.bundleType || 'data',
-                    validity: this.dataset.bundleValidity || '24 Hours'
+                    validity: this.dataset.bundleValidity || '{{VALIDITY}}'
                 };
                 
                 const action = this.classList.contains('btn-gift-large') ? 'gift' : 'buy';
