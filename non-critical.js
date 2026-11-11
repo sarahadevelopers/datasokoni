@@ -78,14 +78,52 @@ function validatePhone(phone) {
 
 function openPaymentModal(product, action) {
     // ============================================
-    // 🎁 GIFTING VIA WHATSAPP (MANUAL)
+    // 🎁 GIFTING VIA WHATSAPP (WITH INSTRUCTIONS & CALL OPTION)
     // ============================================
     if (action === "gift") {
+        ensureModalExists();
+
+        document.body.classList.add("modal-open");
+        document.getElementById("modalBody").style.display = "block";
+        document.getElementById("modalSpinner").style.display = "none";
+        document.getElementById("modalSuccess").style.display = "none";
+
         const waNumber = "254725206054"; // Your WhatsApp number
-        const message = `Hi Bingwa Data! 👋\n\nI want to gift a friend:\n\n📦 *Bundle:* ${product.title}\n💰 *Price:* Ksh ${product.price}\n\n🎁 *Recipient Number:* [Type your friend's number here]\n📱 *My Payer Number:* [Type your number here]\n\nPlease send me the M-Pesa prompt.`;
+        const callNumber = "+254725206054"; // Your Call number
+        const message = `Hi Bingwa Data! 👋\n\nI want to gift a friend:\n📦 *Bundle:* ${product.title}\n💰 *Price:* Ksh ${product.price}\n\n🎁 *Recipient Number:* [Type your friend's number here]\n📱 *My Payer Number:* [Type your number here]`;
         const waUrl = `https://wa.me/${waNumber}?text=${encodeURIComponent(message)}`;
-        window.open(waUrl, '_blank');
-        return; // Stop the rest of the function from opening the M-Pesa modal
+
+        let html = `
+            <div class="product-summary" style="text-align:center; margin-bottom: 1rem;">
+                <h3>Gift a Friend 🎁</h3>
+                <p style="font-size: 1.1rem; margin-top: 0.5rem;">You are gifting <strong>${product.title}</strong> for <strong>Ksh ${product.price}</strong></p>
+            </div>
+            
+            <div style="background: #f0f9f0; border: 1px solid #009B4D; border-radius: 12px; padding: 1rem; margin-bottom: 1.5rem; font-size: 0.95rem;">
+                <h4 style="margin-bottom: 0.5rem; color: #009B4D;">How gifting works:</h4>
+                <ol style="padding-left: 1.2rem; margin: 0; line-height: 1.6;">
+                    <li>Click the WhatsApp button below.</li>
+                    <li>Send us your friend's phone number.</li>
+                    <li>We will reply with an M-Pesa prompt.</li>
+                    <li>Once paid, your friend gets the bundle instantly!</li>
+                </ol>
+            </div>
+
+            <a href="${waUrl}" target="_blank" class="pay-btn" style="display: block; text-align: center; text-decoration: none; background: #25D366; color: white; padding: 1rem; border-radius: 40px; font-weight: bold; font-size: 1.1rem; transition: transform 0.2s; margin-bottom: 1rem;">
+                💬 Continue to WhatsApp
+            </a>
+
+            <div style="text-align: center; margin-top: 1rem; border-top: 1px solid #eee; padding-top: 1rem;">
+                <p style="font-size: 0.85rem; color: #666; margin-bottom: 0.5rem;">Prefer to speak to a human?</p>
+                <a href="tel:${callNumber}" style="display: inline-block; text-decoration: none; color: #009B4D; font-weight: bold; font-size: 1.05rem; background: #f0f9f0; padding: 0.6rem 1.5rem; border-radius: 40px; border: 1px solid #009B4D;">
+                    📞 Call 0725 206 054
+                </a>
+            </div>
+        `;
+
+        document.getElementById("modalBody").innerHTML = html;
+        document.getElementById("paymentModal").style.display = "flex";
+        return; // Stop the rest of the function
     }
     // ============================================
 
