@@ -77,6 +77,18 @@ function validatePhone(phone) {
 }
 
 function openPaymentModal(product, action) {
+    // ============================================
+    // 🎁 GIFTING VIA WHATSAPP (MANUAL)
+    // ============================================
+    if (action === "gift") {
+        const waNumber = "254743731749"; // Your WhatsApp number
+        const message = `Hi Bingwa Data! 👋\n\nI want to gift a friend:\n\n📦 *Bundle:* ${product.title}\n💰 *Price:* Ksh ${product.price}\n\n🎁 *Recipient Number:* [Type your friend's number here]\n📱 *My Payer Number:* [Type your number here]\n\nPlease send me the M-Pesa prompt.`;
+        const waUrl = `https://wa.me/${waNumber}?text=${encodeURIComponent(message)}`;
+        window.open(waUrl, '_blank');
+        return; // Stop the rest of the function from opening the M-Pesa modal
+    }
+    // ============================================
+
     ensureModalExists();
 
     selectedProduct = product;
@@ -94,28 +106,13 @@ function openPaymentModal(product, action) {
             <h3>${product.title}</h3>
             <p>${product.validity} · Ksh ${product.price}</p>
         </div>
+        <input type="tel" id="payerNumber" placeholder="Your phone number" value="${savedNumber}" pattern="${phonePattern}" required>
+        <div class="save-number">
+            <input type="checkbox" id="saveNumberCheckbox" ${savedNumber ? "checked" : ""}>
+            <label for="saveNumberCheckbox">Save my number for next time</label>
+        </div>
+        <button class="pay-btn" id="payNowBtn">Pay via M-PESA</button>
     `;
-
-    if (action === "gift") {
-        html += `
-            <input type="tel" id="recipientNumber" placeholder="Recipient's number (e.g., 0712345678)" pattern="${phonePattern}" required>
-            <input type="tel" id="payerNumber" placeholder="Your number for payment" value="${savedNumber}" pattern="${phonePattern}" required>
-            <div class="save-number">
-                <input type="checkbox" id="saveNumberCheckbox" ${savedNumber ? "checked" : ""}>
-                <label for="saveNumberCheckbox">Save my number for next time</label>
-            </div>
-            <button class="pay-btn" id="payNowBtn">Send Gift</button>
-        `;
-    } else {
-        html += `
-            <input type="tel" id="payerNumber" placeholder="Your phone number" value="${savedNumber}" pattern="${phonePattern}" required>
-            <div class="save-number">
-                <input type="checkbox" id="saveNumberCheckbox" ${savedNumber ? "checked" : ""}>
-                <label for="saveNumberCheckbox">Save my number for next time</label>
-            </div>
-            <button class="pay-btn" id="payNowBtn">Pay via M-PESA</button>
-        `;
-    }
 
     document.getElementById("modalBody").innerHTML = html;
 
@@ -128,6 +125,7 @@ function openPaymentModal(product, action) {
     function handlePayClick() {
         const saveCheckbox = document.getElementById("saveNumberCheckbox").checked;
         let payerNumber = document.getElementById("payerNumber").value.trim();
+        
         if (!validatePhone(payerNumber)) {
             alert("Enter a valid Safaricom number (07XXXXXXXX, 011XXXXXXX, 2547XXXXXXXX, or 25411XXXXXXX).");
             return;
@@ -138,23 +136,14 @@ function openPaymentModal(product, action) {
             localStorage.removeItem("DataSokonini_saved_number");
         }
 
-        let recipientNumber = payerNumber;
-        if (action === "gift") {
-            recipientNumber = document.getElementById("recipientNumber").value.trim();
-            if (!validatePhone(recipientNumber)) {
-                alert("Enter a valid recipient number.");
-                return;
-            }
-        }
-
-        initiatePayment(product, payerNumber, recipientNumber, action);
+        initiatePayment(product, payerNumber, action);
     }
 
     document.getElementById("paymentModal").style.display = "flex";
 }
 
 // ---------- Initiate Payment ----------
-function initiatePayment(product, payerNumber, recipientNumber, action) {
+function initiatePayment(product, payerNumber, action) {
     document.getElementById("modalBody").style.display = "none";
     document.getElementById("modalSpinner").style.display = "block";
 
@@ -162,19 +151,15 @@ function initiatePayment(product, payerNumber, recipientNumber, action) {
         ? window.API_BASE_URL + "/api/pay"
         : "https://saraha-pay-daraja.onrender.com/api/pay";
 
-    // Build the SKU string that the backend & delivery worker will read.
     const bundleSku = `SAF_${product.id}_${product.price}`;
 
-    // THE FIX: bundle_sku is now correctly included in the payload
     const payload = {
         name: product.title,
         phone: payerNumber,
         amount: product.price,
         bundle_sku: bundleSku, 
         bundle_id: product.id,
-        recipient: action === "gift" ? recipientNumber : payerNumber,
-        source: "datasokoni-web",
-        action: action
+        source: "datasokoni-web"
     };
 
     if (typeof grecaptcha === 'undefined') {
