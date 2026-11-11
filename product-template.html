@@ -166,20 +166,20 @@
 
         /* Image */
         .product-image-wrapper {
-            border-radius: 16px;
-            overflow: hidden;
-            background: var(--bg-section);
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            min-height: 180px;
-            width: 100%;
-        }
+                border-radius: 16px;
+                overflow: hidden;
+                background: var(--bg-section);
+                display: flex;
+                align-items: center;
+                justify-content: center;
+                width: 100%;
+            }
         .product-image-wrapper img {
             width: 100%;
             height: auto;
-            max-height: 200px;
             object-fit: contain;
+            border-radius: 16px;
+            display: block;
         }
 
         /* Details */
@@ -735,11 +735,21 @@
                 gap: 1.5rem;
             }
             .product-image-wrapper {
-                min-height: 220px;
+                border-radius: 16px;
+                overflow: hidden;
+                background: var(--bg-section);
+                display: flex;
+                align-items: center;
+                justify-content: center;
+                width: 100%;
             }
             .product-image-wrapper img {
-                max-height: 250px;
-            }
+            width: 100%;
+            height: auto;
+            object-fit: contain;
+            border-radius: 16px;
+            display: block;
+        }
             .trust-section {
                 grid-template-columns: repeat(4, 1fr);
             }
@@ -768,11 +778,21 @@
                 margin: 0;
             }
             .product-image-wrapper {
-                min-height: 300px;
+                border-radius: 16px;
+                overflow: hidden;
+                background: var(--bg-section);
+                display: flex;
+                align-items: center;
+                justify-content: center;
+                width: 100%;
             }
             .product-image-wrapper img {
-                max-height: 350px;
-            }
+            width: 100%;
+            height: auto;
+            object-fit: contain;
+            border-radius: 16px;
+            display: block;
+        }
             .header .tagline {
                 display: block;
                 font-size: 0.85rem;
@@ -899,7 +919,7 @@
     </script>
 
     <script>
-        window.API_BASE_URL = 'https://sarahapay.onrender.com';
+        window.API_BASE_URL = 'https://saraha-pay-daraja.onrender.com';
         window.SITE_NAME = 'Bingwa Data';
     </script>
 <script src="https://www.google.com/recaptcha/api.js?render=6LcKDGEtAAAAAJKAWjXB7j5bSIPvzz94wBWapTD5"></script>
@@ -942,7 +962,7 @@
                 <h1 class="product-title">{{PRODUCT_NAME}}</h1>
             </div>
             <div class="product-price">
-                <span class="currency">Ksh</span> {{PRICE}}
+                <span class="currency">Ksh</span> {{RAW_PRICE}}
                 <span class="savings">Save {{SAVINGS_PERCENT}}%</span>
             </div>
         </div>
@@ -954,12 +974,7 @@
 
                 <!-- Left: Image -->
                 <div class="product-image-wrapper">
-                    <img src="/bingwa-data-image-{{NETWORK}}.webp" 
-                         alt="{{PRODUCT_NAME}} – {{PRICE}} ({{VALIDITY}}) | Bingwa Data" 
-                         loading="lazy"
-                         width="800" 
-                         height="600"
-                         onerror="this.src='/bingwa-data-fallback.webp'">
+                    <img src="../{{PROMO_IMAGE}}" alt="{{PRODUCT_NAME}} - Bingwa Data" loading="lazy">
                 </div>
 
                 <!-- Right: Details -->
@@ -986,13 +1001,13 @@
                             <span class="till-highlight">Till: 1621614</span>
                         </div>
                         <div class="amount-label">
-                            Amount: <strong>Ksh {{PRICE}}</strong>
+                            Amount: <strong>Ksh {{RAW_PRICE}}</strong>
                         </div>
                         <div class="buy-actions">
                             <button class="btn-buy-large" 
                                     data-bundle-id="{{BUNDLE_ID}}" 
                                     data-bundle-title="{{PRODUCT_NAME}}" 
-                                    data-bundle-price="{{PRICE}}" 
+                                    data-bundle-price="{{RAW_PRICE}}" 
                                     data-bundle-network="{{NETWORK}}"
                                     data-bundle-type="{{PRODUCT_TYPE}}"
                                     data-bundle-validity="{{VALIDITY}}">
@@ -1001,7 +1016,7 @@
                             <button class="btn-gift-large" 
                                     data-bundle-id="{{BUNDLE_ID}}" 
                                     data-bundle-title="{{PRODUCT_NAME}}" 
-                                    data-bundle-price="{{PRICE}}" 
+                                    data-bundle-price="{{RAW_PRICE}}" 
                                     data-bundle-network="{{NETWORK}}"
                                     data-bundle-type="{{PRODUCT_TYPE}}"
                                     data-bundle-validity="{{VALIDITY}}">
@@ -1021,7 +1036,7 @@
                     <li>Open <strong>M-PESA</strong> on your phone</li>
                     <li>Select <strong>Lipa na M-PESA</strong> → <strong>Buy Goods &amp; Services</strong></li>
                     <li>Enter Till Number <strong>1621614</strong></li>
-                    <li>Enter the exact amount: <strong>Ksh {{PRICE}}</strong></li>
+                    <li>Enter the exact Amount: <strong>Ksh {{RAW_PRICE}}</strong></li>
                     <li>Enter your <strong>M-PESA PIN</strong> and confirm</li>
                     <li>Your bundle is delivered <strong>instantly</strong> – even with Okoa!</li>
                 </ol>
@@ -1083,7 +1098,7 @@
 
 <!-- ===== MOBILE BUY BAR (Fixed Bottom) ===== -->
 <div class="mobile-buy-bar" id="mobileBuyBar">
-    <span class="m-price">Ksh {{PRICE}}</span>
+    <span class="m-price">Ksh {{RAW_PRICE}}</span>
     <button class="m-btn" onclick="document.querySelector('.btn-buy-large').click()">Buy Now</button>
 </div>
 

@@ -157,7 +157,7 @@ if (bottomSmsBtn) bottomSmsBtn.addEventListener("click", () => handleBottomTypeC
 // ============================================
 // Init
 // ============================================
-fetch("products.json")
+fetch("/products.json")
     .then(res => res.json())
     .then(data => {
         const raw = Array.isArray(data) ? data : (data.products || []);
