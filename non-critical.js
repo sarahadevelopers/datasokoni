@@ -81,7 +81,7 @@ function openPaymentModal(product, action) {
     // 🎁 GIFTING VIA WHATSAPP (MANUAL)
     // ============================================
     if (action === "gift") {
-        const waNumber = "254743731749"; // Your WhatsApp number
+        const waNumber = "254725206054"; // Your WhatsApp number
         const message = `Hi Bingwa Data! 👋\n\nI want to gift a friend:\n\n📦 *Bundle:* ${product.title}\n💰 *Price:* Ksh ${product.price}\n\n🎁 *Recipient Number:* [Type your friend's number here]\n📱 *My Payer Number:* [Type your number here]\n\nPlease send me the M-Pesa prompt.`;
         const waUrl = `https://wa.me/${waNumber}?text=${encodeURIComponent(message)}`;
         window.open(waUrl, '_blank');
