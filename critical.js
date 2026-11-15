@@ -20,6 +20,10 @@ const bottomSmsBtn = document.getElementById("bottomSmsBtn");
 // ============================================
 // Build type filter bar (Data / Minutes / SMS)
 // ============================================
+function isNightTime() {
+    const hour = new Date().getHours();
+    return hour >= 19 && hour < 23; // 7 PM to 11 PM
+}
 function buildTypeFilters() {
     if (!networkFilterBar) return;
 

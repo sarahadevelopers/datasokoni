@@ -923,6 +923,25 @@
         window.SITE_NAME = 'Bingwa Data';
     </script>
 <script src="https://www.google.com/recaptcha/api.js?render=6LcKDGEtAAAAAJKAWjXB7j5bSIPvzz94wBWapTD5"></script>
+    <style>
+        .floating-contact { position: fixed; bottom: 80px; right: 20px; display: flex; flex-direction: column; gap: 12px; z-index: 999; }
+        .floating-btn { width: 54px; height: 54px; border-radius: 50%; display: flex; align-items: center; justify-content: center; box-shadow: 0 4px 12px rgba(0,0,0,0.3); text-decoration: none; transition: transform 0.2s ease; }
+        .floating-btn:hover { transform: scale(1.1); }
+        .floating-btn-wa { background-color: #25D366; }
+        
+        .floating-btn svg { width: 30px; height: 30px; fill: #fff; }
+        @media (max-width: 768px) {
+            .floating-contact { bottom: 75px; right: 15px; gap: 10px; }
+            .floating-btn { width: 48px; height: 48px; }
+            .floating-btn svg { width: 26px; height: 26px; }
+        }
+    </style>
+<style>
+    /* Ensure floating filter bar never overlaps footer credits */
+    .footer, .footer-bottom { 
+        padding-bottom: 75px !important; 
+    }
+</style>
 </head>
 <body>
 
@@ -941,6 +960,20 @@
             <path d="M12 6.5c-3.04 0-5.5 2.46-5.5 5.5 0 1.04.29 2.01.79 2.85L6.5 17.5l2.65-.79c.84.5 1.81.79 2.85.79 3.04 0 5.5-2.46 5.5-5.5S15.04 6.5 12 6.5z" fill="white"/>
         </svg>
     </a>
+<div class="header-actions" style="display:flex; gap:10px; align-items:center; margin-left:auto;">
+    <button onclick="navigator.clipboard.writeText('1621614'); this.innerHTML='✅ Copied!'; setTimeout(() => this.innerHTML='📋 Copy Till', 2000);" class="header-btn header-btn-copy" style="background:#f4f7f6; color:#009B4D; border:1px solid #009B4D; padding:6px 12px; border-radius:40px; font-size:0.75rem; font-weight:700; cursor:pointer; transition: transform 0.2s;">
+        📋 Copy Till (1621614)
+    </button>
+    <a href="tel:+254725206054" class="header-btn header-btn-call" style="background:#009B4D; color:white; padding:6px 12px; border-radius:40px; font-size:0.75rem; font-weight:700; text-decoration:none; transition: transform 0.2s;">
+        📞 0725 206 054
+    </a>
+</div>
+<style>
+    @media (max-width: 768px) {
+        .header-actions { width: 100%; justify-content: space-between; margin-top: 10px; }
+        .header-btn { font-size: 0.7rem; padding: 6px 10px; }
+    }
+</style>
 </header>
 
 <!-- ===== PRODUCT PAGE ===== -->
@@ -998,7 +1031,7 @@
                     <div class="buy-section">
                         <h4>💳 Pay via M-PESA</h4>
                         <div>
-                            <span class="till-highlight">Till: 1621614</span>
+                            <span class="till-highlight" style="display:inline-flex; align-items:center; gap:8px;">Till: 1621614<button onclick="navigator.clipboard.writeText('1621614'); this.innerText='Copied!'; this.style.background='#1A1A1A'; setTimeout(() => { this.innerText='Copy'; this.style.background='#009B4D'; }, 2000);" style="background:#009B4D; color:#fff; border:none; padding:4px 10px; border-radius:20px; cursor:pointer; font-size:0.75rem; font-weight:bold;">Copy</button></span>
                         </div>
                         <div class="amount-label">
                             Amount: <strong>Ksh 250</strong>
@@ -1083,7 +1116,7 @@
             <div class="related-products">
                 <h3>🔥 You might also like</h3>
                 <div class="related-grid">
-                    <a href='/product/safaricom-7gb-30-days-18.html' class='related-card'><div class='r-name'>7GB</div><div class='r-price'>Ksh 495</div><div class='r-validity'>30 Days</div></a><a href='/product/safaricom-250-mins-7-days-13.html' class='related-card'><div class='r-name'>250 Mins</div><div class='r-price'>Ksh 210</div><div class='r-validity'>7 Days</div></a><a href='/product/safaricom-750mb-50-sms-24-hours-8.html' class='related-card'><div class='r-name'>750MB + 50 SMS</div><div class='r-price'>Ksh 50</div><div class='r-validity'>24 Hours</div></a>
+                    <a href='/product/safaricom-60-mins-till-midnight-15.html' class='related-card'><div class='r-name'>60 Mins</div><div class='r-price'>Ksh 53</div><div class='r-validity'>Till Midnight</div></a><a href='/product/safaricom-1000-sms-7-days-23.html' class='related-card'><div class='r-name'>1000 SMS</div><div class='r-price'>Ksh 30</div><div class='r-validity'>7 Days</div></a><a href='/product/safaricom-1250-mins-30-days-20.html' class='related-card'><div class='r-name'>1250 Mins</div><div class='r-price'>Ksh 1050</div><div class='r-validity'>30 Days</div></a>
                 </div>
             </div>
 
@@ -1108,7 +1141,9 @@
         <div class="footer-about">
             <h3 class="footer-logo">Bingwa<span>Data</span></h3>
             <p>Your number one stop for affordable internet bundles. Secure payments via M-PESA Till 1621614.</p>
-        </div>
+        
+<p style="font-size: 0.75rem; color: #888; margin-top: 10px;">Payments securely processed via M-PESA Buy Goods Till <strong>1621614</strong> (Registered Business Name: <em>Bingwa Karndy Enterprises</em>).</p>
+</div>
         <div class="footer-support">
             <h4>Support</h4>
             <ul>
@@ -1127,9 +1162,13 @@
         </div>
     </div>
     <div class="footer-bottom">
-        <p>&copy; 2026 Bingwa Data | Built for Speed.</p>
-        <p class="disclaimer">Payments secured via M-PESA STK Push (Till 1621614). Independent reseller platform – not affiliated with Safaricom or Airtel.</p>
+    <div style="display: flex; flex-direction: column; gap: 6px; align-items: center; text-align: center;">
+        <p class="disclaimer" style="font-size: 0.75rem; color: #888; margin: 0;">Independent reseller platform – not affiliated with Safaricom.</p>
+        <p class="developer-credits" style="font-size: 0.75rem; color: #999; margin: 0;">Designed & Developed by <a href="https://sarahadevelopers.co.ke" target="_blank" rel="noopener" style="color: #009B4D; text-decoration: none; font-weight: bold;">Saraha Developers Ltd</a>.</p>
+        <p style="font-size: 0.75rem; color: #666; margin: 0; font-weight: 500;">&copy; 2026 DataSokoni.com | Built for Speed.</p>
     </div>
+</div>
+</div>
 </footer>
 
 <!-- ===== PAYMENT MODAL ===== -->
@@ -1208,5 +1247,30 @@
     setTimeout(ensurePaymentSystem, 500);
 </script>
 
+<script>
+    document.addEventListener("DOMContentLoaded", function() {
+        const hour = new Date().getHours();
+        if (hour >= 19 && hour < 23) {
+            const buyBtn = document.querySelector('.btn-buy-large');
+            if (!buyBtn) return;
+            const productId = parseInt(buyBtn.dataset.bundleId);
+            if ([1, 6, 7].includes(productId)) {
+                const banner = document.createElement("div");
+                banner.style = "background:#E10000; color:#FFF; text-align:center; padding:12px; font-size:0.9rem; font-weight:bold;";
+                banner.innerHTML = "🌙 <strong>Unavailable right now (7PM - 11PM).</strong> Try <strong>250MB @ 20</strong> or <strong>1GB 24Hrs @ 55</strong>.";
+                document.querySelector("header").parentNode.insertBefore(banner, document.querySelector("header").nextSibling);
+                
+                const btns = document.querySelectorAll('.btn-buy-large, .btn-gift-large');
+                btns.forEach(b => { b.style.background = "#999"; b.style.borderColor = "#999"; b.style.pointerEvents = "none"; b.textContent = "Unavailable"; });
+            }
+        }
+    });
+</script>
+    <div class="floating-contact">
+        <a href="https://wa.me/254725206054" target="_blank" rel="noopener" class="floating-btn floating-btn-wa" aria-label="Chat on WhatsApp">
+            <svg viewBox="0 0 24 24"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/></svg>
+        </a>
+        
+    </div>
 </body>
 </html>

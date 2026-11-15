@@ -122,6 +122,24 @@ function openPaymentModal(product, action) {
         `;
 
         document.getElementById("modalBody").innerHTML = html;
+
+        const payerInput = document.getElementById("payerNumber");
+        if (payerInput) {
+            payerInput.addEventListener("input", function(e) {
+                let val = this.value.replace(/\D/g, '');
+                if (val.startsWith('254') && val.length > 3) {
+                    val = val.replace(/^(254)(\d{3})(\d{3})(\d{3}).*/, '$1 $2 $3 $4');
+                } else if (val.startsWith('0') && val.length > 4) {
+                    val = val.replace(/^(0\d{3})(\d{3})(\d{3}).*/, '$1 $2 $3');
+                }
+                this.value = val;
+            });
+        }
+
+        const trustNote = document.createElement("div");
+        trustNote.style = "background:#f0f9f0; border:1px solid #009B4D; border-radius:8px; padding:8px 12px; margin-bottom:12px; font-size:0.75rem; color:#1A1A1A; text-align:center;";
+        trustNote.innerHTML = "🔒 M-PESA Prompt will show: <strong>Bingwa Karndy Enterprises</strong>";
+        document.getElementById("modalBody").insertBefore(trustNote, document.getElementById("payNowBtn"));
         document.getElementById("paymentModal").style.display = "flex";
         return; // Stop the rest of the function
     }
@@ -154,6 +172,24 @@ function openPaymentModal(product, action) {
 
     document.getElementById("modalBody").innerHTML = html;
 
+        const payerInput = document.getElementById("payerNumber");
+        if (payerInput) {
+            payerInput.addEventListener("input", function(e) {
+                let val = this.value.replace(/\D/g, '');
+                if (val.startsWith('254') && val.length > 3) {
+                    val = val.replace(/^(254)(\d{3})(\d{3})(\d{3}).*/, '$1 $2 $3 $4');
+                } else if (val.startsWith('0') && val.length > 4) {
+                    val = val.replace(/^(0\d{3})(\d{3})(\d{3}).*/, '$1 $2 $3');
+                }
+                this.value = val;
+            });
+        }
+
+        const trustNote = document.createElement("div");
+        trustNote.style = "background:#f0f9f0; border:1px solid #009B4D; border-radius:8px; padding:8px 12px; margin-bottom:12px; font-size:0.75rem; color:#1A1A1A; text-align:center;";
+        trustNote.innerHTML = "🔒 M-PESA Prompt will show: <strong>Bingwa Karndy Enterprises</strong>";
+        document.getElementById("modalBody").insertBefore(trustNote, document.getElementById("payNowBtn"));
+
     const payBtn = document.getElementById("payNowBtn");
     if (payBtn) {
         payBtn.removeEventListener("click", handlePayClick);
@@ -162,7 +198,7 @@ function openPaymentModal(product, action) {
 
     function handlePayClick() {
         const saveCheckbox = document.getElementById("saveNumberCheckbox").checked;
-        let payerNumber = document.getElementById("payerNumber").value.trim();
+        let payerNumber = document.getElementById("payerNumber").value.replace(/\s+/g, "").trim();
         
         if (!validatePhone(payerNumber)) {
             alert("Enter a valid Safaricom number (07XXXXXXXX, 011XXXXXXX, 2547XXXXXXXX, or 25411XXXXXXX).");
