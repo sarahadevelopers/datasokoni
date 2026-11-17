@@ -330,6 +330,18 @@ body{background:var(--bg-main);color:var(--text-primary);font-family:var(--font)
         padding-bottom: 75px !important; 
     }
 </style>
+<style>
+    /* Pulse animation for the Copy Till Button */
+    @keyframes tillPulse {
+        0% { box-shadow: 0 0 0 0 rgba(0, 155, 77, 0.4); }
+        70% { box-shadow: 0 0 0 8px rgba(0, 155, 77, 0); }
+        100% { box-shadow: 0 0 0 0 rgba(0, 155, 77, 0); }
+    }
+    .header-btn-copy {
+        animation: tillPulse 2s infinite;
+        border-width: 2px !important;
+    }
+</style>
 </head>
 <body>
 
@@ -345,7 +357,7 @@ body{background:var(--bg-main);color:var(--text-primary);font-family:var(--font)
     </div>
 <div class="header-actions" style="display:flex; gap:10px; align-items:center; margin-left:auto;">
     <button onclick="navigator.clipboard.writeText('1621614'); this.innerHTML='✅ Copied!'; setTimeout(() => this.innerHTML='📋 Copy Till', 2000);" class="header-btn header-btn-copy" style="background:#f4f7f6; color:#009B4D; border:1px solid #009B4D; padding:6px 12px; border-radius:40px; font-size:0.75rem; font-weight:700; cursor:pointer; transition: transform 0.2s;">
-        📋 Copy Till (1621614)
+        📋 Copy Till (162 161 4)
     </button>
     <a href="tel:+254725206054" class="header-btn header-btn-call" style="background:#009B4D; color:white; padding:6px 12px; border-radius:40px; font-size:0.75rem; font-weight:700; text-decoration:none; transition: transform 0.2s;">
         📞 0725 206 054
@@ -450,7 +462,7 @@ body{background:var(--bg-main);color:var(--text-primary);font-family:var(--font)
         <div class="step">
             <div class="step-number">2</div>
             <h3>Pay via M-PESA</h3>
-            <p>Open M-PESA → <strong>Lipa na M-PESA</strong> → <strong>Buy Goods</strong> → Enter Till <strong>1621614</strong></p>
+            <p>Open M-PESA → <strong>Lipa na M-PESA</strong> → <strong>Buy Goods</strong> → Enter Till </p>
         </div>
         <div class="step">
             <div class="step-number">3</div>
@@ -480,7 +492,7 @@ body{background:var(--bg-main);color:var(--text-primary);font-family:var(--font)
             <li>Open <strong>M-PESA</strong> on your phone</li>
             <li>Select <strong>Lipa na M-PESA</strong></li>
             <li>Choose <strong>Buy Goods &amp; Services</strong></li>
-            <li>Enter Till Number <strong>1621614</strong></li>
+            <li>Enter Till Number  <button onclick="navigator.clipboard.writeText('1621614'); this.innerHTML='✅'; setTimeout(() => this.innerHTML='📋', 2000);" style="background:none; border:none; cursor:pointer; font-size:1rem; padding:0 5px; vertical-align:middle;" title="Copy Till Number">📋</button></li>
             <li>Enter the <strong>exact amount</strong> for your chosen bundle</li>
             <li>Confirm with your <strong>M-PESA PIN</strong></li>
             <li>Your bundle is delivered <strong>instantly</strong> – even with Okoa!</li>
@@ -495,7 +507,7 @@ body{background:var(--bg-main);color:var(--text-primary);font-family:var(--font)
         <p><strong>Bingwa Data</strong> is a leading reseller platform in Kenya that offers <strong>discounted Safaricom bundles</strong> – data, minutes, and SMS – at prices up to <strong>60% cheaper</strong> than official USSD rates.</p>
         <p>We're <strong>Okoa friendly</strong>, meaning you can buy bundles even with outstanding debt. No registration required – just choose your bundle, pay via M-PESA, and get instant delivery.</p>
         <ul>
-            <li>✅ Instant delivery via M-PESA Till <strong>1621614</strong></li>
+            <li>✅ Instant delivery via M-PESA Till </li>
             <li>✅ Works with <strong>Okoa Jahazi</strong></li>
             <li>✅ <strong>No registration</strong> required</li>
             <li>✅ 24/7 automated support via WhatsApp</li>
@@ -510,7 +522,7 @@ body{background:var(--bg-main);color:var(--text-primary);font-family:var(--font)
     <div class="faq-grid">
         <div class="faq-item">
             <h4>❓ How do I buy bundles on Bingwa Data?</h4>
-            <p>Select your bundle, pay via M-PESA Till <strong>1621614</strong>, and receive instant delivery. Follow the 3-step guide above.</p>
+            <p>Select your bundle, pay via M-PESA Till , and receive instant delivery. Follow the 3-step guide above.</p>
         </div>
         <div class="faq-item">
             <h4>❓ Can I buy bundles for another number?</h4>
@@ -564,7 +576,7 @@ body{background:var(--bg-main);color:var(--text-primary);font-family:var(--font)
         <div class="footer-about">
             <h3 class="footer-logo">Bingwa<span>Data</span></h3>
             <p>Your number one stop for affordable Safaricom bundles. Secure payments via M-PESA Till 1621614.</p>
-<p style="font-size: 0.75rem; color: #888; margin-top: 10px;">Payments securely processed via M-PESA Buy Goods Till <strong>1621614</strong> (Registered Business Name: <em>Bingwa Karndy Enterprises</em>).</p>
+<p style="font-size: 0.75rem; color: #888; margin-top: 10px;">Payments securely processed via M-PESA Buy Goods Till  (Registered Business Name: <em>Bingwa Karndy Enterprises</em>).</p>
         </div>
         <div class="footer-support">
             <h4>Support</h4>

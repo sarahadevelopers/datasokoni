@@ -942,6 +942,18 @@
         padding-bottom: 75px !important; 
     }
 </style>
+<style>
+    /* Pulse animation for the Copy Till Button */
+    @keyframes tillPulse {
+        0% { box-shadow: 0 0 0 0 rgba(0, 155, 77, 0.4); }
+        70% { box-shadow: 0 0 0 8px rgba(0, 155, 77, 0); }
+        100% { box-shadow: 0 0 0 0 rgba(0, 155, 77, 0); }
+    }
+    .header-btn-copy {
+        animation: tillPulse 2s infinite;
+        border-width: 2px !important;
+    }
+</style>
 </head>
 <body>
 
@@ -962,7 +974,7 @@
     </a>
 <div class="header-actions" style="display:flex; gap:10px; align-items:center; margin-left:auto;">
     <button onclick="navigator.clipboard.writeText('1621614'); this.innerHTML='✅ Copied!'; setTimeout(() => this.innerHTML='📋 Copy Till', 2000);" class="header-btn header-btn-copy" style="background:#f4f7f6; color:#009B4D; border:1px solid #009B4D; padding:6px 12px; border-radius:40px; font-size:0.75rem; font-weight:700; cursor:pointer; transition: transform 0.2s;">
-        📋 Copy Till (1621614)
+        📋 Copy Till (162 161 4)
     </button>
     <a href="tel:+254725206054" class="header-btn header-btn-call" style="background:#009B4D; color:white; padding:6px 12px; border-radius:40px; font-size:0.75rem; font-weight:700; text-decoration:none; transition: transform 0.2s;">
         📞 0725 206 054
@@ -1016,7 +1028,7 @@
                     <div class="okoa-badge-large">✅ Okoa Friendly</div>
 
                     <p class="product-description">
-                        Get the best value on Safaricom with this amazing bundle. Get instant delivery via M-PESA Till <strong>1621614</strong>.
+                        Get the best value on Safaricom with this amazing bundle. Get instant delivery via M-PESA Till .
                     </p>
 
                     <ul class="product-features">
@@ -1031,7 +1043,7 @@
                     <div class="buy-section">
                         <h4>💳 Pay via M-PESA</h4>
                         <div>
-                            <span class="till-highlight" style="display:inline-flex; align-items:center; gap:8px;">Till: 1621614<button onclick="navigator.clipboard.writeText('1621614'); this.innerText='Copied!'; this.style.background='#1A1A1A'; setTimeout(() => { this.innerText='Copy'; this.style.background='#009B4D'; }, 2000);" style="background:#009B4D; color:#fff; border:none; padding:4px 10px; border-radius:20px; cursor:pointer; font-size:0.75rem; font-weight:bold;">Copy</button></span>
+                            <span class="till-highlight" style="display:inline-flex; align-items:center; gap:8px;">🔒 Till: 162 161 4<button onclick="navigator.clipboard.writeText('1621614'); this.innerText='Copied!'; this.style.background='#1A1A1A'; setTimeout(() => { this.innerText='Copy'; this.style.background='#009B4D'; }, 2000);" style="background:#009B4D; color:#fff; border:none; padding:4px 10px; border-radius:20px; cursor:pointer; font-size:0.75rem; font-weight:bold;">Copy</button></span>
                         </div>
                         <div class="amount-label">
                             Amount: <strong>Ksh 1050</strong>
@@ -1068,7 +1080,7 @@
                 <ol>
                     <li>Open <strong>M-PESA</strong> on your phone</li>
                     <li>Select <strong>Lipa na M-PESA</strong> → <strong>Buy Goods &amp; Services</strong></li>
-                    <li>Enter Till Number <strong>1621614</strong></li>
+                    <li>Enter Till Number  <button onclick="navigator.clipboard.writeText('1621614'); this.innerHTML='✅'; setTimeout(() => this.innerHTML='📋', 2000);" style="background:none; border:none; cursor:pointer; font-size:1rem; padding:0 5px; vertical-align:middle;" title="Copy Till Number">📋</button></li>
                     <li>Enter the exact Amount: <strong>Ksh 1050</strong></li>
                     <li>Enter your <strong>M-PESA PIN</strong> and confirm</li>
                     <li>Your bundle is delivered <strong>instantly</strong> – even with Okoa!</li>
@@ -1142,7 +1154,7 @@
             <h3 class="footer-logo">Bingwa<span>Data</span></h3>
             <p>Your number one stop for affordable internet bundles. Secure payments via M-PESA Till 1621614.</p>
         
-<p style="font-size: 0.75rem; color: #888; margin-top: 10px;">Payments securely processed via M-PESA Buy Goods Till <strong>1621614</strong> (Registered Business Name: <em>Bingwa Karndy Enterprises</em>).</p>
+<p style="font-size: 0.75rem; color: #888; margin-top: 10px;">Payments securely processed via M-PESA Buy Goods Till  (Registered Business Name: <em>Bingwa Karndy Enterprises</em>).</p>
 </div>
         <div class="footer-support">
             <h4>Support</h4>
